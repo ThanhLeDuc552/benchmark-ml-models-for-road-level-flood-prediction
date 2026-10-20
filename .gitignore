@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+cache/
+*/cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Operating System & Editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+.vscode/
+.idea/
+
+# Raw upstream datasets & hydraulic simulations (~954 MB)
+resources for forming dataset/
+new DSSs/
