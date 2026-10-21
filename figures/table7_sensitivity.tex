@@ -1,0 +1,16 @@
+\begin{table}
+\caption{Sensitivity of the Best Model to Validation and Labeling Settings}
+\label{tab:sensitivity}
+\begin{tabular}{llll}
+\toprule
+Setting & AUC-PR & Recall & Brier score ↓ \\
+\midrule
+Block size 250 m & 0.883 & 0.749 & 0.136 \\
+Block size 500 m (main) & 0.831 & 0.749 & 0.136 \\
+Block size 1000 m & 0.847 & 0.749 & 0.136 \\
+Uncertain segments excluded & 0.991 & 0.934 & 0.061 \\
+Uncertain as non-flooded (main) & 0.831 & 0.749 & 0.136 \\
+Broad flood (>=10cm) & 0.987 & 0.904 & 0.079 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="440" viewBox="0 0 820 440">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="410.0" y="30" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Optimism Gap: Random CV Overstatement vs Spatial Block CV (AUC-ROC)</text>
+<line x1="75" y1="350.0" x2="755" y2="350.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="354.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">0.70</text>
+<line x1="75" y1="301.66666666666663" x2="755" y2="301.66666666666663" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="305.66666666666663" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">0.75</text>
+<line x1="75" y1="253.33333333333334" x2="755" y2="253.33333333333334" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="257.33333333333337" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">0.80</text>
+<line x1="75" y1="204.99999999999997" x2="755" y2="204.99999999999997" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="208.99999999999997" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">0.85</text>
+<line x1="75" y1="156.66666666666657" x2="755" y2="156.66666666666657" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="160.66666666666657" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">0.90</text>
+<line x1="75" y1="108.33333333333331" x2="755" y2="108.33333333333331" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="112.33333333333331" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">0.95</text>
+<line x1="75" y1="59.999999999999936" x2="755" y2="59.999999999999936" stroke="#f1f5f9" stroke-width="1"/>
+<text x="67" y="63.999999999999936" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" fill="#64748b">1.00</text>
+<rect x="75" y="60" width="680" height="290" fill="none" stroke="#475569" stroke-width="1.2"/>
+<text x="30" y="205.0" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155" transform="rotate(-90 30 205.0)">AUC-ROC Score</text>
+<rect x="92.0" y="193.119927650453" width="39.666666666666664" height="156.880072349547" fill="#2563eb" rx="2"/>
+<text x="111.83333333333333" y="189.119927650453" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.862</text>
+<rect x="135.66666666666666" y="159.93256105336" width="39.666666666666664" height="190.06743894664" fill="#ea580c" rx="2"/>
+<text x="155.5" y="155.93256105336" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#9a3412">0.897</text>
+<text x="133.66666666666666" y="143.93256105336" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+0.034</text>
+<text x="133.66666666666666" y="370" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">LR</text>
+<rect x="205.33333333333331" y="167.51924670058207" width="39.666666666666664" height="182.48075329941793" fill="#2563eb" rx="2"/>
+<text x="225.16666666666666" y="163.51924670058207" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.889</text>
+<rect x="248.99999999999997" y="122.19301467413618" width="39.666666666666664" height="227.80698532586382" fill="#ea580c" rx="2"/>
+<text x="268.8333333333333" y="118.19301467413618" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#9a3412">0.936</text>
+<text x="246.99999999999997" y="106.19301467413618" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+0.047</text>
+<text x="246.99999999999997" y="370" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">SVM (RBF)</text>
+<rect x="318.66666666666663" y="159.18104348838898" width="39.666666666666664" height="190.81895651161102" fill="#2563eb" rx="2"/>
+<text x="338.49999999999994" y="155.18104348838898" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.897</text>
+<rect x="362.3333333333333" y="68.05849069723519" width="39.666666666666664" height="281.9415093027648" fill="#ea580c" rx="2"/>
+<text x="382.16666666666663" y="64.05849069723519" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#9a3412">0.992</text>
+<text x="360.3333333333333" y="52.058490697235186" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+0.094</text>
+<text x="360.3333333333333" y="370" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">Random Forest</text>
+<rect x="432.0" y="163.67802927364647" width="39.666666666666664" height="186.32197072635353" fill="#2563eb" rx="2"/>
+<text x="451.8333333333333" y="159.67802927364647" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.893</text>
+<rect x="475.6666666666667" y="81.08035553118634" width="39.666666666666664" height="268.91964446881366" fill="#ea580c" rx="2"/>
+<text x="495.5" y="77.08035553118634" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#9a3412">0.978</text>
+<text x="473.6666666666667" y="65.08035553118634" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+0.085</text>
+<text x="473.6666666666667" y="370" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">XGBoost</text>
+<rect x="545.3333333333333" y="163.0771446699168" width="39.666666666666664" height="186.9228553300832" fill="#2563eb" rx="2"/>
+<text x="565.1666666666666" y="159.0771446699168" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.893</text>
+<rect x="588.9999999999999" y="110.67356673271371" width="39.666666666666664" height="239.3264332672863" fill="#ea580c" rx="2"/>
+<text x="608.8333333333333" y="106.67356673271371" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#9a3412">0.948</text>
+<text x="586.9999999999999" y="94.67356673271371" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+0.054</text>
+<text x="586.9999999999999" y="370" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">MLP</text>
+<rect x="658.6666666666666" y="164.25992934290994" width="39.666666666666664" height="185.74007065709006" fill="#2563eb" rx="2"/>
+<text x="678.5" y="160.25992934290994" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.892</text>
+<rect x="702.3333333333333" y="89.80935012227235" width="39.666666666666664" height="260.19064987772765" fill="#ea580c" rx="2"/>
+<text x="722.1666666666666" y="85.80935012227235" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#9a3412">0.969</text>
+<text x="700.3333333333333" y="73.80935012227235" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+0.077</text>
+<text x="700.3333333333333" y="370" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">GraphSAGE</text>
+<rect x="240.0" y="392" width="16" height="12" fill="#2563eb" rx="2"/>
+<text x="264.0" y="402" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#334155">Spatial Block CV (Unbiased Benchmark)</text>
+<rect x="490.0" y="392" width="16" height="12" fill="#ea580c" rx="2"/>
+<text x="514.0" y="402" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#334155">Random CV (Optimistically Leaked)</text>
+</svg>

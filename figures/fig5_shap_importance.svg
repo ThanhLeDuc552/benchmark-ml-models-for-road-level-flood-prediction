@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="420" viewBox="0 0 740 420">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="370.0" y="28" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Global Road Flood Predictor Importance via TreeSHAP (XGBoost)</text>
+<line x1="190.0" y1="55" x2="190.0" y2="365" stroke="#f1f5f9" stroke-width="1"/>
+<text x="190.0" y="383" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.00</text>
+<line x1="288.0" y1="55" x2="288.0" y2="365" stroke="#f1f5f9" stroke-width="1"/>
+<text x="288.0" y="383" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.37</text>
+<line x1="386.0" y1="55" x2="386.0" y2="365" stroke="#f1f5f9" stroke-width="1"/>
+<text x="386.0" y="383" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.73</text>
+<line x1="484.0" y1="55" x2="484.0" y2="365" stroke="#f1f5f9" stroke-width="1"/>
+<text x="484.0" y="383" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1.10</text>
+<line x1="582.0" y1="55" x2="582.0" y2="365" stroke="#f1f5f9" stroke-width="1"/>
+<text x="582.0" y="383" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1.47</text>
+<line x1="680.0" y1="55" x2="680.0" y2="365" stroke="#f1f5f9" stroke-width="1"/>
+<text x="680.0" y="383" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1.83</text>
+<rect x="190" y="55" width="490" height="310" fill="none" stroke="#475569" stroke-width="1.2"/>
+<text x="435.0" y="403" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">Mean Absolute SHAP Value: E[|SHAP|]</text>
+<rect x="190" y="59.0" width="426.0869565217392" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="78.375" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">depression_depth</text>
+<text x="624.0869565217392" y="78.375" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">1.592</text>
+<rect x="190" y="97.75" width="265.4099024057314" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="117.125" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">tpi</text>
+<text x="463.4099024057314" y="117.125" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.992</text>
+<rect x="190" y="136.5" width="133.5357691101021" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="155.875" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">dist_river</text>
+<text x="331.53576911010214" y="155.875" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.499</text>
+<rect x="190" y="175.25" width="130.12015425494744" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="194.625" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">elev_mean</text>
+<text x="328.12015425494747" y="194.625" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.486</text>
+<rect x="190" y="214.0" width="85.1681894299343" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="233.375" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">slope_mean</text>
+<text x="283.1681894299343" y="233.375" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.318</text>
+<rect x="190" y="252.75" width="43.858168082378064" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="272.125" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">betweenness</text>
+<text x="241.85816808237806" y="272.125" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.164</text>
+<rect x="190" y="291.5" width="43.08225372543939" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="310.875" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">elev_min</text>
+<text x="241.0822537254394" y="310.875" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.161</text>
+<rect x="190" y="330.25" width="42.55210153504055" height="30.75" fill="#059669" rx="3"/>
+<text x="180" y="349.625" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">length_m</text>
+<text x="240.55210153504055" y="349.625" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="bold" fill="#065f46">0.159</text>
+</svg>

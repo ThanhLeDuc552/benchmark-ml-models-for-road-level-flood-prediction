@@ -1,0 +1,16 @@
+\begin{table}
+\caption{Classification Benchmark Under Spatial Block Cross-Validation}
+\label{tab:classification}
+\begin{tabular}{lllllllll}
+\toprule
+Model & Family & AUC-PR & AUC-ROC & F1 & Recall (flooded) & Brier score ↓ & Random CV AUC-ROC & Optimism Gap Δ \\
+\midrule
+LR & Linear & 0.784 ± 0.111 & 0.862 ± 0.023 & 0.739 ± 0.086 & 0.757 ± 0.108 & 0.148 ± 0.013 & 0.897 ± 0.017 & +0.034 \\
+SVM (RBF) & Kernel & 0.796 ± 0.095 & 0.889 ± 0.019 & 0.745 ± 0.097 & 0.755 ± 0.102 & 0.129 ± 0.013 & 0.936 ± 0.009 & +0.047 \\
+Random Forest & Tree ensemble & 0.840 ± 0.077 & 0.897 ± 0.023 & 0.757 ± 0.110 & 0.747 ± 0.139 & 0.127 ± 0.012 & 0.992 ± 0.005 & +0.094 \\
+XGBoost & Tree ensemble & 0.831 ± 0.081 & 0.893 ± 0.025 & 0.747 ± 0.092 & 0.749 ± 0.145 & 0.136 ± 0.017 & 0.978 ± 0.007 & +0.085 \\
+MLP & Neural & 0.833 ± 0.067 & 0.893 ± 0.025 & 0.784 ± 0.065 & 0.816 ± 0.097 & 0.132 ± 0.018 & 0.948 ± 0.011 & +0.054 \\
+GraphSAGE & Graph & 0.823 ± 0.083 & 0.892 ± 0.032 & 0.791 ± 0.057 & 0.852 ± 0.043 & 0.139 ± 0.030 & 0.969 ± 0.011 & +0.077 \\
+\bottomrule
+\end{tabular}
+\end{table}

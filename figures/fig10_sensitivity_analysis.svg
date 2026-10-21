@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="450" viewBox="0 0 940 450">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="470.0" y="28" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Sensitivity Analysis of Spatial Validation Settings and Target Labeling</text>
+<text x="255.0" y="48" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#334155">(a) Spatial Block Dimension (m)</text>
+<line x1="65" y1="360.0" x2="445" y2="360.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="364.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.70</text>
+<line x1="65" y1="309.99999999999994" x2="445" y2="309.99999999999994" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="313.99999999999994" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.75</text>
+<line x1="65" y1="260.0" x2="445" y2="260.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="264.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.80</text>
+<line x1="65" y1="209.99999999999997" x2="445" y2="209.99999999999997" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="213.99999999999997" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.85</text>
+<line x1="65" y1="159.99999999999991" x2="445" y2="159.99999999999991" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="163.99999999999991" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.90</text>
+<line x1="65" y1="109.99999999999999" x2="445" y2="109.99999999999999" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="113.99999999999999" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.95</text>
+<line x1="65" y1="59.999999999999936" x2="445" y2="59.999999999999936" stroke="#f1f5f9" stroke-width="1"/>
+<text x="57" y="63.999999999999936" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1.00</text>
+<rect x="65" y="60" width="380" height="300" fill="none" stroke="#475569" stroke-width="1.2"/>
+<text x="20" y="210.0" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155" transform="rotate(-90 20 210.0)">Validation Metric Score</text>
+<rect x="87.8" y="176.97745695367405" width="38.0" height="183.02254304632595" fill="#2563eb" rx="2"/>
+<text x="106.8" y="172.97745695367405" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.883</text>
+<rect x="129.8" y="148.31939313798335" width="38.0" height="211.68060686201665" fill="#059669" rx="2"/>
+<text x="148.8" y="144.31939313798335" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#065f46">0.912</text>
+<text x="127.8" y="378" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">250m</text>
+<rect x="214.4666666666667" y="229.40833682620254" width="38.0" height="130.59166317379746" fill="#2563eb" rx="2"/>
+<text x="233.4666666666667" y="225.40833682620254" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.831</text>
+<rect x="256.4666666666667" y="167.25313373135842" width="38.0" height="192.74686626864158" fill="#059669" rx="2"/>
+<text x="275.4666666666667" y="163.25313373135842" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#065f46">0.893</text>
+<text x="254.4666666666667" y="378" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">500m</text>
+<rect x="341.1333333333334" y="213.0829452118217" width="38.0" height="146.9170547881783" fill="#2563eb" rx="2"/>
+<text x="360.1333333333334" y="209.0829452118217" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.847</text>
+<rect x="383.1333333333334" y="171.51501866986663" width="38.0" height="188.48498133013337" fill="#059669" rx="2"/>
+<text x="402.1333333333334" y="167.51501866986663" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#065f46">0.888</text>
+<text x="381.1333333333334" y="378" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">1000m</text>
+<text x="685.0" y="48" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#334155">(b) Uncertain Segment Strategy</text>
+<line x1="495" y1="360.0" x2="875" y2="360.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="364.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.70</text>
+<line x1="495" y1="309.99999999999994" x2="875" y2="309.99999999999994" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="313.99999999999994" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.75</text>
+<line x1="495" y1="260.0" x2="875" y2="260.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="264.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.80</text>
+<line x1="495" y1="209.99999999999997" x2="875" y2="209.99999999999997" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="213.99999999999997" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.85</text>
+<line x1="495" y1="159.99999999999991" x2="875" y2="159.99999999999991" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="163.99999999999991" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.90</text>
+<line x1="495" y1="109.99999999999999" x2="875" y2="109.99999999999999" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="113.99999999999999" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0.95</text>
+<line x1="495" y1="59.999999999999936" x2="875" y2="59.999999999999936" stroke="#f1f5f9" stroke-width="1"/>
+<text x="487" y="63.999999999999936" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1.00</text>
+<rect x="495" y="60" width="380" height="300" fill="none" stroke="#475569" stroke-width="1.2"/>
+<rect x="514.0" y="68.6087168801327" width="41.800000000000004" height="291.3912831198673" fill="#2563eb" rx="2"/>
+<text x="534.9" y="64.6087168801327" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.991</text>
+<rect x="559.8" y="119.62539878127086" width="41.800000000000004" height="240.37460121872914" fill="#059669" rx="2"/>
+<text x="580.7" y="115.62539878127086" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#065f46">0.940</text>
+<text x="557.8" y="378" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#334155">Uncertain Excluded</text>
+<rect x="640.6666666666666" y="229.40833682620254" width="41.800000000000004" height="130.59166317379746" fill="#2563eb" rx="2"/>
+<text x="661.5666666666666" y="225.40833682620254" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.831</text>
+<rect x="686.4666666666666" y="167.25313373135842" width="41.800000000000004" height="192.74686626864158" fill="#059669" rx="2"/>
+<text x="707.3666666666667" y="163.25313373135842" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#065f46">0.893</text>
+<text x="684.4666666666666" y="378" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#334155">Primary (Impassable)</text>
+<rect x="767.3333333333334" y="73.32983507288515" width="41.800000000000004" height="286.67016492711485" fill="#2563eb" rx="2"/>
+<text x="788.2333333333333" y="69.32983507288515" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#1e40af">0.987</text>
+<rect x="813.1333333333333" y="206.56380715584723" width="41.800000000000004" height="153.43619284415277" fill="#059669" rx="2"/>
+<text x="834.0333333333334" y="202.56380715584723" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" font-weight="bold" fill="#065f46">0.853</text>
+<text x="811.1333333333333" y="378" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" font-weight="600" fill="#334155">Broad Flood (>=10cm)</text>
+<rect x="330.0" y="402" width="16" height="12" fill="#2563eb" rx="2"/>
+<text x="354.0" y="412" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#334155">Spatial Block AUC-PR</text>
+<rect x="520.0" y="402" width="16" height="12" fill="#059669" rx="2"/>
+<text x="544.0" y="412" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#334155">Spatial Block AUC-ROC</text>
+</svg>

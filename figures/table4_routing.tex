@@ -1,0 +1,18 @@
+\begin{table}
+\caption{Routing Results Over 150 OD Pairs (lambda = 5.0)}
+\label{tab:routing}
+\begin{tabular}{lllll}
+\toprule
+Strategy & Flooded seg. per trip & Flooded length (m) & Time increase (median, %) & No safe route (%) \\
+\midrule
+Shortest time & 16.76 & 1063.6 & 0.0% & 94.7% \\
+LR & 12.87 & 780.7 & 4.1% & 94.7% \\
+SVM (RBF) & 11.25 & 692.6 & 11.6% & 94.7% \\
+Random Forest & 11.15 & 683.6 & 7.6% & 94.7% \\
+XGBoost & 10.47 & 639.8 & 13.5% & 94.7% \\
+MLP & 10.35 & 625.8 & 16.5% & 94.7% \\
+GraphSAGE & 11.20 & 689.5 & 18.9% & 94.7% \\
+Oracle (observed) & 8.03 & 485.6 & 21.9% & 94.7% \\
+\bottomrule
+\end{tabular}
+\end{table}

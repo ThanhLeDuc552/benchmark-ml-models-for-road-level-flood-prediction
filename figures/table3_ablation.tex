@@ -1,0 +1,18 @@
+\begin{table}
+\caption{Feature-Group and Graph Ablation (AUC-PR under Spatial CV)}
+\label{tab:ablation}
+\begin{tabular}{llll}
+\toprule
+Setting & Model A (XGBoost) & Model B (GraphSAGE) & ΔAUC-PR (GraphSAGE) \\
+\midrule
+All features (Baseline) & 0.831 & 0.823 & 0.000 \\
+− Terrain Features & 0.575 & 0.484 & -0.339 \\
+− Hydrological Features & 0.812 & 0.753 & -0.070 \\
+− Rainfall Features & 0.831 & 0.804 & -0.019 \\
+− Network Features & 0.831 & 0.845 & +0.022 \\
+GraphSAGE, no graph edges (isolated nodes) & — & 0.807 & -0.016 \\
+GraphSAGE, 1 layer & — & 0.824 & +0.001 \\
+GraphSAGE, 3 layers & — & 0.753 & -0.070 \\
+\bottomrule
+\end{tabular}
+\end{table}

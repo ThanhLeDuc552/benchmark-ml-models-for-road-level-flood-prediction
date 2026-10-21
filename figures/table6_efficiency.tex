@@ -1,0 +1,16 @@
+\begin{table}
+\caption{Model Size and Run Time}
+\label{tab:efficiency}
+\begin{tabular}{lllll}
+\toprule
+Model & Parameters & Training time (s) & Inference, district (ms) & AUC-PR \\
+\midrule
+LR & 19 & 0.01 & 2.4 & 0.784 \\
+SVM (RBF) & 37,062 & 0.30 & 88.8 & 0.796 \\
+Random Forest & 50,000 & 0.25 & 43.3 & 0.840 \\
+XGBoost & 3,200 & 0.11 & 5.5 & 0.831 \\
+MLP & 3,329 & 0.32 & 12.3 & 0.833 \\
+GraphSAGE & 3,297 & 0.43 & 8.8 & 0.823 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,67 @@
+% =====================================================================
+% Benchmarking ML Models for Road-Level Flood Prediction and Flood-Aware Routing
+% IEEE conference format (IEEEtran), prepared for AIAIS 2027.
+% Limit: 6 pages INCLUDING references (up to 10 with paid extra pages).
+% Review is double-blind: keep the author block anonymous until camera-ready.
+% Red [need results] / [NR] marks values the experiment team must supply.
+% =====================================================================
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+
+\graphicspath{{figures/}}
+
+% ---------- Placeholder macros (delete before submission) ----------
+\newcommand{\NR}{\textcolor{red}{[need results]}}
+\newcommand{\NRx}[1]{\textcolor{red}{[need results: #1]}}
+\newcommand{\nr}{\textcolor{red}{[NR]}}
+\newcommand{\TODO}[1]{\textcolor{blue}{[To do: #1]}}
+\newcommand{\figplaceholder}[1]{%
+  \fbox{\parbox[c][3.2cm][c]{0.92\columnwidth}{\centering\small
+  \textcolor{red}{[need results: #1]}}}}
+
+\begin{document}
+
+\title{Benchmarking Machine Learning Models for Road-Level Flood Prediction and Flood-Aware Routing: A Case Study of Da Nang, Vietnam}
+
+% Anonymous for double-blind review. Restore names for the camera-ready version.
+\author{\IEEEauthorblockN{Anonymous Author(s)}
+\IEEEauthorblockA{\textit{Anonymous Institution}\\
+Anonymous City, Country}}
+
+\maketitle
+
+\begin{abstract}
+During heavy rain, drivers need to know which roads are flooded, yet flood studies in Vietnamese cities map susceptibility over areas, and flood models are compared only by classification scores. It is therefore unknown whether the model that best predicts flooded roads also gives the safest routes. This paper benchmarks six machine learning models from five families---logistic regression, support vector machine, random forest, XGBoost, multilayer perceptron, and the graph neural network GraphSAGE---for road-level flood prediction and for the flood-aware routing built on their predictions, using the extreme rainfall of 14 October 2022 in Hai Chau, Da Nang, Vietnam, as a case study. Under spatial block cross-validation over \NR{} road segments, \NRx{best classifier} achieved the highest area under the precision--recall curve (\NR), while random cross-validation overstated AUC-ROC by \NRx{range}. Used as routing costs, the out-of-fold probabilities of \NRx{best routing model} reduced exposure to flooded segments by \NR\% at a median travel-time increase of \NR\%, and \NRx{whether the best classifier was also the best for routing}. Shapley additive explanations identified \NRx{top features} as the main flood drivers, and \NRx{one-sentence efficiency and robustness result}.
+\end{abstract}
+
+\begin{IEEEkeywords}
+benchmarking, explainable artificial intelligence, flood-aware routing, graph neural networks, machine learning, road networks, spatial cross-validation, urban flooding
+\end{IEEEkeywords}
+
+\input{sections/introduction}
+\input{sections/relatedwork}
+\input{sections/data}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+% ---------- Camera-ready only: keep hidden during double-blind review ----------
+% \section*{Acknowledgment}
+% \TODO{funding source and acknowledgements.}
+% During the preparation of this manuscript, the author(s) used \TODO{tool} to improve
+% grammar and readability. All content was reviewed and edited by the author(s), who take
+% full responsibility for the published work.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

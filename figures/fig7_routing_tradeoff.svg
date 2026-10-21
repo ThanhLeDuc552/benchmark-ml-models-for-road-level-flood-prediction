@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="440.0" y="28" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Downstream Routing Benchmark: Hazard Avoidance vs Travel-Time Overhead (λ = 5.0)</text>
+<text x="440.0" y="46" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#64748b">Evaluated Across 150 Representative Origin-Destination Trips in Hai Chau District</text>
+<line x1="80.0" y1="65" x2="80.0" y2="415" stroke="#f1f5f9" stroke-width="1"/>
+<text x="80.0" y="433" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0%</text>
+<line x1="180.0" y1="65" x2="180.0" y2="415" stroke="#f1f5f9" stroke-width="1"/>
+<text x="180.0" y="433" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">5%</text>
+<line x1="280.0" y1="65" x2="280.0" y2="415" stroke="#f1f5f9" stroke-width="1"/>
+<text x="280.0" y="433" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">10%</text>
+<line x1="380.0" y1="65" x2="380.0" y2="415" stroke="#f1f5f9" stroke-width="1"/>
+<text x="380.0" y="433" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">15%</text>
+<line x1="480.0" y1="65" x2="480.0" y2="415" stroke="#f1f5f9" stroke-width="1"/>
+<text x="480.0" y="433" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">20%</text>
+<line x1="580.0" y1="65" x2="580.0" y2="415" stroke="#f1f5f9" stroke-width="1"/>
+<text x="580.0" y="433" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">25%</text>
+<line x1="80" y1="415.0" x2="600" y2="415.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="419.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">400m</text>
+<line x1="80" y1="321.6666666666667" x2="600" y2="321.6666666666667" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="325.6666666666667" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">600m</text>
+<line x1="80" y1="228.33333333333334" x2="600" y2="228.33333333333334" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="232.33333333333334" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">800m</text>
+<line x1="80" y1="135.0" x2="600" y2="135.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="139.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1000m</text>
+<rect x="80" y="65" width="520" height="350" fill="none" stroke="#475569" stroke-width="1.2"/>
+<text x="340.0" y="453" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">Median Travel Time Increase Over Shortest Path (%)</text>
+<text x="30" y="240.0" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155" transform="rotate(-90 30 240.0)">Mean Inundated Distance per Trip (m)</text>
+<rect x="630" y="65" width="225" height="350" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="4"/>
+<text x="645" y="89" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#0f172a">Routing Strategy Results</text>
+<text x="645" y="105" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">(Flooded length, Time overhead)</text>
+<circle cx="80.0" cy="105.33665377777783" r="7" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="80.0" y="93.33665377777783" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#dc2626">Shortest</text>
+<circle cx="652" cy="130" r="6" fill="#dc2626"/>
+<text x="666" y="129" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">Shortest time</text>
+<text x="666" y="143" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">1063.6 m  |  +0.0% time</text>
+<circle cx="162.79468017919584" cy="237.32478355555554" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+<text x="162.79468017919584" y="253.32478355555554" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#2563eb">LR</text>
+<circle cx="652" cy="164" r="6" fill="#2563eb"/>
+<text x="666" y="163" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">LR</text>
+<text x="666" y="177" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">780.7 m  |  +4.1% time</text>
+<circle cx="312.06332638649735" cy="278.43816355555555" r="7" fill="#7c3aed" stroke="#ffffff" stroke-width="1.5"/>
+<text x="312.06332638649735" y="266.43816355555555" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#7c3aed">SVM (RBF)</text>
+<circle cx="652" cy="198" r="6" fill="#7c3aed"/>
+<text x="666" y="197" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">SVM (RBF)</text>
+<text x="666" y="211" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">692.6 m  |  +11.6% time</text>
+<circle cx="232.4479594965812" cy="282.63294622222224" r="7" fill="#059669" stroke="#ffffff" stroke-width="1.5"/>
+<text x="232.4479594965812" y="298.63294622222224" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#059669">Random Forest</text>
+<circle cx="652" cy="232" r="6" fill="#059669"/>
+<text x="666" y="231" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">Random Forest</text>
+<text x="666" y="245" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">683.6 m  |  +7.6% time</text>
+<circle cx="349.86207608721946" cy="303.09154133333334" r="7" fill="#ea580c" stroke="#ffffff" stroke-width="1.5"/>
+<text x="349.86207608721946" y="291.09154133333334" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#ea580c">XGBoost</text>
+<circle cx="652" cy="266" r="6" fill="#ea580c"/>
+<text x="666" y="265" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">XGBoost</text>
+<text x="666" y="279" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">639.8 m  |  +13.5% time</text>
+<circle cx="409.22386293551415" cy="309.61880488888886" r="7" fill="#0891b2" stroke="#ffffff" stroke-width="1.5"/>
+<text x="409.22386293551415" y="325.61880488888886" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#0891b2">MLP</text>
+<circle cx="652" cy="300" r="6" fill="#0891b2"/>
+<text x="666" y="299" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">MLP</text>
+<text x="666" y="313" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">625.8 m  |  +16.5% time</text>
+<circle cx="457.6324832725726" cy="279.87694666666664" r="7" fill="#d97706" stroke="#ffffff" stroke-width="1.5"/>
+<text x="457.6324832725726" y="267.87694666666664" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#d97706">GraphSAGE</text>
+<circle cx="652" cy="334" r="6" fill="#d97706"/>
+<text x="666" y="333" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">GraphSAGE</text>
+<text x="666" y="347" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">689.5 m  |  +18.9% time</text>
+<circle cx="518.0672279054603" cy="375.07507999999996" r="7" fill="#16a34a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="518.0672279054603" y="391.07507999999996" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9" font-weight="bold" fill="#16a34a">Oracle</text>
+<circle cx="652" cy="368" r="6" fill="#16a34a"/>
+<text x="666" y="367" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="bold" fill="#334155">Oracle (observed)</text>
+<text x="666" y="381" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">485.6 m  |  +21.9% time</text>
+</svg>

@@ -27,3 +27,11 @@ Thumbs.db
 # Raw upstream datasets & hydraulic simulations (~954 MB)
 resources for forming dataset/
 new DSSs/
+
+# Reports and evaluation summaries
+figures/*errors*.txt
+figures/current figures errors.txt
+figures/evaluation.md
+figures/paper_results_summary.md
+figures/paper_values.json
+

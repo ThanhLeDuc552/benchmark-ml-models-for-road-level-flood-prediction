@@ -7,9 +7,15 @@ This repository contains modular GIS and feature engineering scripts designed to
 ```
 scripts/
 ├── build_phase1_features.py        # Master orchestrator pipeline for phase-1 features
+├── cross_validation/
+│   ├── build_spatial_blocks.py     # Derives 500m spatial grid blocks (block_id) for spatial CV
+│   ├── spatial_blocks_summary.csv  # Block allocation summary
+│   └── README.md
 ├── ground_truth/
 │   ├── build_passability.py        # Derives road passability (0, 1, 2) from HEC-RAS 2D simulation
+│   ├── build_flooded_target.py     # Derives binary flood target (flooded: 0/1) from passability
 │   ├── passability_summary.csv     # Segment-level passability metrics and depth
+│   ├── flooded_target_summary.csv  # Binary flood target summary
 │   └── README.md
 ├── hydrology_data/
 │   ├── build_river_data.py         # Extracts river network from HDF, computes dist_river
@@ -25,6 +31,9 @@ scripts/
 │   └── README.md
 └── road_data/
     ├── hai_chau_road_data.py       # Base network extraction, splitting (<=100m) & graph generation
+    ├── build_betweenness.py        # Computes edge betweenness centrality (betweenness)
+    ├── build_spatial_blocks.py     # Wrapper for cross_validation/build_spatial_blocks.py
+    ├── betweenness_summary.csv     # Summary of computed edge betweenness values
     └── README.md
 ```
 
@@ -36,8 +45,10 @@ scripts/
 | `osm_u` | `road` | `id` | Int | OSM start intersection node ID | Yes |
 | `osm_v` | `road` | `id` | Int | OSM end intersection node ID | Yes |
 | `osm_key` | `road` | `id` | Int | Parallel edge key | Yes |
+| `block_id` | `road` | `id` | String | 500m spatial block identifier (`x_y`) for spatial CV | Yes |
 | `node_degree` | `road` | `feature` | Count | Node connectivity degree | Yes |
 | `length_m` | `road` | `feature` | Meters | Segment length (split at <= 100 m) | Yes |
+| `betweenness` | `road` | `feature` | Float | Normalized edge betweenness centrality | Yes |
 | `road_class` | `road` | `feature` | Category | OSM highway classification | Yes |
 | `is_underpass_tunnel_bridge` | `road` | `feature` | 0/1 | Structural bridge/tunnel flag | Yes |
 | `dist_river` | `hydrology` | `feature` | Meters | Euclidean distance to Han River / network | Yes |
@@ -50,6 +61,7 @@ scripts/
 | `rain_peak_intensity` | `rainfall` | `feature` | mm/h | Peak hourly rainfall (nearest station DSS) | **No** (excluded by rule) |
 | `geometry_wkt` | `id` | `id` | WKT Line | LineString geometry in `EPSG:2045` | Handled via `geometry` attr |
 | `passability` | `ground_truth`| `target` | `0/1/2` | Peak water depth from HEC-RAS 2D model | **Yes** |
+| `flooded` | `ground_truth`| `target` | `0/1` | Binary flood indicator (impassable: passability == 2) | **Yes** |
 
 ### Passability Classification Criteria
 - **`0: passable`**: $0 - 10\text{ cm}$ ($\text{depth} < 0.10\text{ m}$)

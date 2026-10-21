@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="490" viewBox="0 0 880 490">
+<defs>
+  <clipPath id="fig8-plot-clip">
+    <rect x="80" y="65" width="540" height="360"/>
+  </clipPath>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="440.0" y="28" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Trade-off Curves: Flood Exposure vs Travel-Time Increase Across Risk Aversion λ ∈ [1, 20]</text>
+<text x="440.0" y="46" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#64748b">Parametric sweep: λ controls penalty severity C_i = t_i (1 + λ p_i)</text>
+<line x1="80.0" y1="65" x2="80.0" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="80.0" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0%</text>
+<line x1="129.0909090909091" y1="65" x2="129.0909090909091" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="129.0909090909091" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">5%</text>
+<line x1="178.1818181818182" y1="65" x2="178.1818181818182" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="178.1818181818182" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">10%</text>
+<line x1="227.27272727272725" y1="65" x2="227.27272727272725" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="227.27272727272725" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">15%</text>
+<line x1="276.3636363636364" y1="65" x2="276.3636363636364" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="276.3636363636364" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">20%</text>
+<line x1="325.45454545454544" y1="65" x2="325.45454545454544" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="325.45454545454544" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">25%</text>
+<line x1="374.5454545454545" y1="65" x2="374.5454545454545" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="374.5454545454545" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">30%</text>
+<line x1="423.6363636363636" y1="65" x2="423.6363636363636" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="423.6363636363636" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">35%</text>
+<line x1="472.72727272727275" y1="65" x2="472.72727272727275" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="472.72727272727275" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">40%</text>
+<line x1="521.8181818181819" y1="65" x2="521.8181818181819" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="521.8181818181819" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">45%</text>
+<line x1="570.9090909090909" y1="65" x2="570.9090909090909" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="570.9090909090909" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">50%</text>
+<line x1="620.0" y1="65" x2="620.0" y2="425" stroke="#f1f5f9" stroke-width="1"/>
+<text x="620.0" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">55%</text>
+<line x1="80" y1="425.0" x2="620" y2="425.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="429.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">200m</text>
+<line x1="80" y1="353.0" x2="620" y2="353.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="357.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">400m</text>
+<line x1="80" y1="281.0" x2="620" y2="281.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="285.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">600m</text>
+<line x1="80" y1="209.0" x2="620" y2="209.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="213.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">800m</text>
+<line x1="80" y1="137.0" x2="620" y2="137.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="141.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1000m</text>
+<line x1="80" y1="65.0" x2="620" y2="65.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="72" y="69.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1200m</text>
+<rect x="80" y="65" width="540" height="360" fill="none" stroke="#475569" stroke-width="1.2"/>
+<text x="350.0" y="463" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">Median Travel Time Overhead (%)</text>
+<text x="30" y="245.0" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155" transform="rotate(-90 30 245.0)">Flooded Distance per Trip (m)</text>
+<rect x="650" y="65" width="205" height="360" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="4"/>
+<text x="665" y="89" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#0f172a">Models &amp; Baselines</text>
+<text x="665" y="105" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">Curves over λ ∈ [1, 20]</text>
+<g clip-path="url(#fig8-plot-clip)">
+<circle cx="80.0" cy="114.1" r="4.5" fill="#dc2626"/>
+<circle cx="80.0" cy="212.0" r="4.5" fill="#2563eb"/>
+<circle cx="80.0" cy="243.4" r="4.5" fill="#2563eb"/>
+<circle cx="106.2" cy="282.1" r="4.5" fill="#2563eb"/>
+<circle cx="130.6" cy="286.6" r="4.5" fill="#2563eb"/>
+<circle cx="134.7" cy="287.3" r="4.5" fill="#2563eb"/>
+<polyline points="80.0,212.0 80.0,243.4 106.2,282.1 130.6,286.6 134.7,287.3" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="80.0" cy="235.8" r="4.5" fill="#7c3aed"/>
+<circle cx="80.0" cy="274.1" r="4.5" fill="#7c3aed"/>
+<circle cx="201.1" cy="304.8" r="4.5" fill="#7c3aed"/>
+<circle cx="289.9" cy="318.8" r="4.5" fill="#7c3aed"/>
+<circle cx="315.4" cy="328.4" r="4.5" fill="#7c3aed"/>
+<polyline points="80.0,235.8 80.0,274.1 201.1,304.8 289.9,318.8 315.4,328.4" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="80.0" cy="218.4" r="4.5" fill="#059669"/>
+<circle cx="80.0" cy="265.8" r="4.5" fill="#059669"/>
+<circle cx="134.7" cy="303.5" r="4.5" fill="#059669"/>
+<circle cx="208.6" cy="319.7" r="4.5" fill="#059669"/>
+<circle cx="214.9" cy="324.0" r="4.5" fill="#059669"/>
+<polyline points="80.0,218.4 80.0,265.8 134.7,303.5 208.6,319.7 214.9,324.0" fill="none" stroke="#059669" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="80.0" cy="228.3" r="4.5" fill="#ea580c"/>
+<circle cx="80.0" cy="277.5" r="4.5" fill="#ea580c"/>
+<circle cx="151.8" cy="312.4" r="4.5" fill="#ea580c"/>
+<circle cx="226.0" cy="324.8" r="4.5" fill="#ea580c"/>
+<circle cx="299.6" cy="330.0" r="4.5" fill="#ea580c"/>
+<polyline points="80.0,228.3 80.0,277.5 151.8,312.4 226.0,324.8 299.6,330.0" fill="none" stroke="#ea580c" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="80.0" cy="230.2" r="4.5" fill="#0891b2"/>
+<circle cx="100.9" cy="281.6" r="4.5" fill="#0891b2"/>
+<circle cx="201.7" cy="314.9" r="4.5" fill="#0891b2"/>
+<circle cx="296.1" cy="318.1" r="4.5" fill="#0891b2"/>
+<circle cx="392.1" cy="320.6" r="4.5" fill="#0891b2"/>
+<polyline points="80.0,230.2 100.9,281.6 201.7,314.9 296.1,318.1 392.1,320.6" fill="none" stroke="#0891b2" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="80.0" cy="256.2" r="4.5" fill="#d97706"/>
+<circle cx="119.7" cy="294.9" r="4.5" fill="#d97706"/>
+<circle cx="206.7" cy="298.1" r="4.5" fill="#d97706"/>
+<circle cx="361.6" cy="322.5" r="4.5" fill="#d97706"/>
+<circle cx="380.1" cy="322.7" r="4.5" fill="#d97706"/>
+<polyline points="80.0,256.2 119.7,294.9 206.7,298.1 361.6,322.5 380.1,322.7" fill="none" stroke="#d97706" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="80.0" cy="252.1" r="4.5" fill="#16a34a"/>
+<circle cx="81.0" cy="329.1" r="4.5" fill="#16a34a"/>
+<circle cx="205.9" cy="351.1" r="4.5" fill="#16a34a"/>
+<circle cx="409.3" cy="380.7" r="4.5" fill="#16a34a"/>
+<circle cx="517.1" cy="380.4" r="4.5" fill="#16a34a"/>
+<polyline points="80.0,252.1 81.0,329.1 205.9,351.1 409.3,380.7 517.1,380.4" fill="none" stroke="#16a34a" stroke-width="2.3" stroke-linecap="round"/>
+</g>
+<line x1="665" y1="131" x2="690" y2="131" stroke="#dc2626" stroke-width="3"/>
+<circle cx="677.5" cy="131" r="3.5" fill="#dc2626"/>
+<text x="698" y="135" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Shortest time</text>
+<line x1="665" y1="165" x2="690" y2="165" stroke="#2563eb" stroke-width="3"/>
+<circle cx="677.5" cy="165" r="3.5" fill="#2563eb"/>
+<text x="698" y="169" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">LR</text>
+<line x1="665" y1="199" x2="690" y2="199" stroke="#7c3aed" stroke-width="3"/>
+<circle cx="677.5" cy="199" r="3.5" fill="#7c3aed"/>
+<text x="698" y="203" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">SVM (RBF)</text>
+<line x1="665" y1="233" x2="690" y2="233" stroke="#059669" stroke-width="3"/>
+<circle cx="677.5" cy="233" r="3.5" fill="#059669"/>
+<text x="698" y="237" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Random Forest</text>
+<line x1="665" y1="267" x2="690" y2="267" stroke="#ea580c" stroke-width="3"/>
+<circle cx="677.5" cy="267" r="3.5" fill="#ea580c"/>
+<text x="698" y="271" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">XGBoost</text>
+<line x1="665" y1="301" x2="690" y2="301" stroke="#0891b2" stroke-width="3"/>
+<circle cx="677.5" cy="301" r="3.5" fill="#0891b2"/>
+<text x="698" y="305" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">MLP</text>
+<line x1="665" y1="335" x2="690" y2="335" stroke="#d97706" stroke-width="3"/>
+<circle cx="677.5" cy="335" r="3.5" fill="#d97706"/>
+<text x="698" y="339" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">GraphSAGE</text>
+<line x1="665" y1="369" x2="690" y2="369" stroke="#16a34a" stroke-width="3"/>
+<circle cx="677.5" cy="369" r="3.5" fill="#16a34a"/>
+<text x="698" y="373" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Oracle</text>
+</svg>
