@@ -1,0 +1,16 @@
+% !TeX root = ../main.tex
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Classification Scores and Routing Decisions}
+The benchmarking results demonstrate that the top classification model (MLP, AUC-PR 0.891, recall 0.847) also achieved the superior routing outcome, reducing flooded segment exposure by 43.0\% and total inundated distance by 43.7\% relative to the shortest-time path. Conversely, models with lower spatial recall (such as Logistic Regression and SVM) or higher probability miscalibration (such as uncalibrated tree ensembles) incurred noticeably more flooded traversals. Because Dijkstra's routing decisions aggregate path-level risk penalties, even a few missed flooded segments (false negatives) can misdirect routes through inundated corridors. For practitioners, the benchmark indicates that models for flood-aware routing should be selected by their routing outcomes, or at least by recall and calibration, not by AUC alone.
+
+\subsection{Flood Mechanisms}
+SHAP importance rankings corroborate key physical flood mechanisms identified by hydrodynamic modeling in Da Nang~\cite{doan2023}. Depression depth and topographic position index emerged as the dominant features, followed by proximity to the Han River. During the October 2022 event, extreme rainfall coincided with high tidal river stages, inducing backwater ponding and disabling gravity drainage outfalls along the riverfront. The models accurately identified low-lying arterial underpasses (e.g., Dien Bien Phu) and riverbank road segments as high-risk clusters.
+
+\subsection{Cost of Model Complexity}
+Comparing model complexity against operational performance (Tables~\ref{tab:ablation} and~\ref{tab:efficiency}), MLP achieved the best balance of predictive accuracy and computation, requiring only 3,329 parameters and 1.6~ms for full district inference. GraphSAGE demonstrated the predictive value of topological message passing (+0.021 AUC-PR over the edge-free baseline) with an inference time of 8.3~ms. Given that all models evaluated completed district-wide inference well within 100~ms, the computational cost of neural and graph architectures is negligible compared to their gains in flood avoidance during routing.
+
+\subsection{Limitations}
+Five limitations apply. First, the study uses one event, so it identifies flood-prone segments rather than forecasting floods for any storm. Second, unreported flooding outside the excluded buffer is still labeled as non-flooded, which lowers the measured recall. Third, rainfall varies little across a single district, so it cannot separate segments within one event. Fourth, a coarse DEM may miss street-scale depressions. Fifth, crowd-sourced flood observations may introduce reporting bias toward major arterial corridors over smaller residential alleyways.
+

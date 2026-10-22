@@ -35,3 +35,13 @@ figures/evaluation.md
 figures/paper_results_summary.md
 figures/paper_values.json
 
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

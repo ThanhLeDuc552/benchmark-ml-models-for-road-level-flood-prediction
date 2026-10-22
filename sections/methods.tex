@@ -1,0 +1,58 @@
+% !TeX root = ../main.tex
+\section{Problem Formulation and Benchmark Design}
+\label{sec:method}
+
+\subsection{Problem Formulation}
+The road network is a directed graph $G=(V,E)$, where $V$ is the set of intersections and $E$ is the set of road segments. Each segment $e_i \in E$ has a feature vector $\mathbf{x}_i \in \mathbb{R}^{d}$, a length $\ell_i$, a free-flow travel time $t_i$, and a flood label $y_i \in \{0,1\}$. The benchmark has two tasks.
+
+\subsubsection{Classification task}
+A model estimates the probability that segment $e_i$ floods:
+\begin{equation}
+  p_i = P(y_i = 1 \mid \mathbf{x}_i).
+  \label{eq:prob}
+\end{equation}
+For the graph model, the input also includes the features of neighboring segments, taken from the line graph $L(G)$, whose nodes are the segments of $G$ and whose edges join segments that share an intersection.
+
+\subsubsection{Routing task}
+The probabilities are converted into edge costs
+\begin{equation}
+  C_i = t_i \,(1 + \lambda\, p_i),
+  \label{eq:cost}
+\end{equation}
+where $\lambda \geq 0$ controls risk aversion. For an origin--destination (OD) pair $(o,d)$ with the set of paths $\Pi_{od}$, the flood-aware route is
+\begin{equation}
+  \pi^{*} = \arg\min_{\pi \in \Pi_{od}} \sum_{e_i \in \pi} C_i.
+  \label{eq:route}
+\end{equation}
+A route $\pi$ is evaluated by its observed flood exposure and its travel-time increase over the shortest-time route $\pi_0$:
+\begin{equation}
+  F(\pi) = \sum_{e_i \in \pi} y_i\, \ell_i, \qquad
+  \Delta T(\pi) = \frac{T(\pi) - T(\pi_0)}{T(\pi_0)},
+  \label{eq:routemetrics}
+\end{equation}
+where $T(\pi)=\sum_{e_i \in \pi} t_i$. The research question is whether the model with the best classification score also gives the lowest $F$ at a given $\Delta T$.
+
+\subsection{Models for Comparison}
+Six models from five families are compared:
+\begin{itemize}
+  \item \textbf{Linear:} logistic regression (LR), a transparent baseline.
+  \item \textbf{Kernel:} support vector machine (SVM) with a radial basis function kernel~\cite{cortes1995} and Platt scaling.
+  \item \textbf{Tree ensembles:} random forest (RF)~\cite{breiman2001} and XGBoost~\cite{chen2016}.
+  \item \textbf{Neural:} multilayer perceptron (MLP) with two hidden layers (64 and 32 units) with ReLU activations and dropout (0.2).
+  \item \textbf{Graph:} GraphSAGE~\cite{hamilton2017} on the line graph $L(G)$, with two SAGEConv layers (32 hidden channels) and mean neighborhood aggregation.
+\end{itemize}
+All models receive the same features, folds, and random seeds. Class weights handle class imbalance, features are standardized for all models except the tree ensembles, and hyperparameters are tuned by grid search with inner 5-fold cross-validation inside the training folds only.
+
+\subsection{Classification Benchmark}
+Neighboring segments share terrain and drainage, so random splits leak information between training and test sets~\cite{roberts2017}. The district is therefore divided into square blocks of 500~m, which are assigned to five folds and held out in turn. For GraphSAGE, held-out segments stay in the graph, but their labels are hidden during training. Random five-fold cross-validation is also run, and the optimism gap of model $m$ is
+\begin{equation}
+  \Delta_m = \text{AUC}^{\text{random}}_m - \text{AUC}^{\text{spatial}}_m.
+  \label{eq:gap}
+\end{equation}
+The primary metric is the area under the precision--recall curve (AUC-PR), whose no-skill baseline equals the share of flooded segments (0.425). AUC-ROC, F1, and recall on the flooded class are also reported, and calibration is measured with the Brier score~\cite{brier1950}, because the probabilities become routing costs. Differences across folds are tested with the Friedman and Wilcoxon signed-rank tests~\cite{demsar2006}. SHAP values~\cite{lundberg2017} are computed for every model, with TreeSHAP for RF and XGBoost and KernelSHAP on a sample of 200 segments for the others, and the models are compared by the rank of each feature's mean absolute SHAP value.
+
+\subsection{Routing Benchmark}
+Every segment receives the probability predicted in the fold where it was held out, so no model routes on labels it was trained on. For 150 random OD pairs, routes are computed with Dijkstra's algorithm for each model and for two baselines: shortest time ($p_i=0$) and an oracle ($p_i=y_i$) that knows the observed labels. Each route is scored by its flooded segments and length, its travel-time increase, and whether a flood-free route exists. The main results use $\lambda=5.0$, and $\lambda$ is varied over $[1.0, 20.0]$ so that models can be compared at equal travel-time cost. Finally, the model rankings by classification and by routing are compared.
+
+\subsection{Ablation, Sensitivity, and Efficiency}
+The feature-group ablation removes the terrain, hydrological, imperviousness, or network features in turn. For GraphSAGE, the number of layers is varied, and a version without graph edges isolates the effect of connectivity. Sensitivity is tested for the block size, the handling of uncertain segments, and $\lambda$. Efficiency is measured by the number of parameters, the training time, the inference time for the district, and the routing time per OD pair, on an AMD Ryzen 7 processor with 16~GB RAM running PyTorch 2.14, XGBoost 3.2, and PyTorch Geometric 2.8. All experiments use 5 random seeds (fixed base seed 42) and report the mean $\pm$ standard deviation.

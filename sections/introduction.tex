@@ -1,0 +1,19 @@
+% !TeX root = ../main.tex
+\section{Introduction}
+\label{sec:intro}
+
+Urban flooding disrupts road transport long before it damages buildings. A road becomes unsafe for most vehicles at about 30~cm of standing water~\cite{pregnolato2017}, and the disruption spreads beyond the flooded links. During Hurricane Harvey, flooding of only 1.3\% of the roads in Houston increased network-wide travel times by 8\%~\cite{rajput2023}. For drivers and traffic managers, the useful question during heavy rain is therefore which road segments become impassable, not which areas are susceptible.
+
+Da Nang, Vietnam, illustrates this problem. On the night of 14 October 2022, the city received close to 600~mm of rain; parts of the city stood about 1~m deep, and the Dien Bien Phu underpass flooded completely~\cite{vnn2022sonca,vnn2022death}. Hai Chau, the dense central district along the Han River, is classed among the most flood-susceptible areas of the city~\cite{nguyen2026}.
+
+Flood research in Da Nang maps susceptibility with machine learning~\cite{nguyen2026,hoang2025}, simulates the sewer network~\cite{doan2023}, and maps inundation from radar imagery~\cite{nguyenquach2024}, but it reports results for areas, grid cells, or sewer nodes rather than roads. Three gaps remain. First, road-level prediction is rare, and the closest study~\cite{yuan2023} validated its models with random splits, which overstate accuracy~\cite{roberts2017}. Second, model comparisons cover mostly tree ensembles~\cite{nguyen2026,hoang2025,yuan2023,ha2021}, so linear, kernel, neural, and graph models are rarely tested on the same data. Third, flood models are judged by classification scores alone. This leaves open the question that this paper asks: \emph{does the model that best predicts flooded roads also give the safest routes?}
+
+To answer it, this paper benchmarks six machine learning models from five families for road-level flood prediction and flood-aware routing in Hai Chau during the 2022 Da Nang flood. Its contributions are as follows:
+\begin{enumerate}
+  \item \textbf{Leakage-aware classification benchmark:} six models compared under spatial block cross-validation, with precision--recall, calibration, significance tests, and SHAP.
+  \item \textbf{Downstream routing benchmark:} the out-of-fold probabilities of every model used as routing costs and compared with shortest-path and oracle baselines.
+  \item \textbf{Classification--routing agreement:} a test of whether the two model rankings agree.
+  \item \textbf{Efficiency and robustness:} the cost of each model, a feature-group ablation, and a sensitivity analysis.
+\end{enumerate}
+
+Section~\ref{sec:related} reviews related work, Section~\ref{sec:data} describes the case study, Section~\ref{sec:method} formulates the problem and the benchmark, Section~\ref{sec:results} reports the results, Section~\ref{sec:discussion} discusses them, and Section~\ref{sec:conclusion} concludes the paper.

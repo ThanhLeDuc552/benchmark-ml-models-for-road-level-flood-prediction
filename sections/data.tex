@@ -1,0 +1,21 @@
+% !TeX root = ../main.tex
+\section{Case Study}
+\label{sec:data}
+
+\subsection{Study Area and Historical Flood Event}
+The study covers the former Hai Chau district of Da Nang, with boundaries as they stood in October 2022, on the west bank of the Han River. The district contains the commercial core of the city, a dense street grid, and the Dien Bien Phu underpass, and it is classed among the most flood-susceptible areas of the city~\cite{nguyen2026}.
+
+The historical event studied is the extreme rainfall of 14--15 October 2022. Da Nang received close to 600~mm of rain overnight, parts of the city stood about 1~m deep, and the Dien Bien Phu underpass flooded completely~\cite{vnn2022sonca,vnn2022death}. Manholes along the Han River also overflowed, because high river levels blocked the drainage outfalls~\cite{doan2023}. During this event, automated rainfall gauges recorded 507.3~mm of total cumulative precipitation, with a peak hourly intensity of 27.1~mm/h. Fig.~\ref{fig:studyarea} shows the study area.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{fig1_study_area_floods}
+  \caption{Study area, road network, and observed flooded segments in Hai Chau.}
+  \label{fig:studyarea}
+\end{figure}
+
+\subsection{Road Network and Flood Labels}
+The drivable network was obtained from OpenStreetMap with OSMnx~\cite{boeing2017} and split at intersections and at a maximum length of 100~m, giving 1,190 nodes, 2,059 directed edges, and 2,059 segments. The flood labels come from verified reports of flooding during the event, cross-checked against Sentinel-1 flood extents~\cite{nguyenquach2024}, following the report-based approach of Hoang et al.~\cite{hoang2025}. A segment is labeled flooded ($y=1$) if flooding was observed on it and non-flooded ($y=0$) otherwise. Segments within 50~m of a flooded segment but without their own observation are treated as uncertain and excluded; a sensitivity run that keeps them as non-flooded is reported in Section~\ref{sec:sensitivity}. The benchmark uses 876 flooded, 139 non-flooded, and 1,044 excluded segments.
+
+\subsection{Features}
+Each segment is described by features computed within a 25--50~m buffer. Terrain features are the minimum and mean elevation, slope, and topographic position index from a 30~m digital elevation model (DEM). Hydrological features are the distances to the Han River and to the nearest canal, retention pond, and drainage outfall. Imperviousness is the mean normalized difference built-up index (NDBI) from Sentinel-2 imagery. Network features are road class, length, node degree, and betweenness centrality.

@@ -1,0 +1,8 @@
+% !TeX root = ../main.tex
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper benchmarked six machine learning models from five families for road-level flood prediction and flood-aware routing during the 2022 Da Nang flood. Multilayer perceptron (MLP) reached the highest AUC-PR of 0.891 $\pm$ 0.042 under spatial cross-validation, and as a routing cost it reduced flood exposure by 43.7\% for a 20.3\% increase in travel time. All models executed district-wide inference in under 98~ms, and their spatial rankings proved robust across block scales from 250~m to 1000~m.
+
+
+Future work will add further events, timestamped depth records for short-term prediction, and risk costs in reinforcement-learning routing~\cite{le2026}. The risk maps could also provide prior flood probabilities for placing road sensors or cameras in Da Nang, following~\cite{pan2026}.
