@@ -63,8 +63,8 @@ def generate_fig1_study_area(geoms_wkt, flood_labels, out_path_svg):
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
     
     # Title & Subtitle
-    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Hai Chau District, Da Nang: Road Network &amp; Inundation Ground Truth</text>')
-    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Typhoon Son Ca (14 Oct 2022) | 2,059 Segments: 876 Flooded (&gt;30 cm), 1,183 Passable/Uncertain</text>')
+    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Hai Chau District, Da Nang: Road Network &amp; Simulated Flood Labels</text>')
+    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">HEC-RAS Simulation, 14–15 Oct 2022 | 2,059 Segments: 876 Impassable (&gt;30 cm), 1,183 Passable (≤30 cm)</text>')
 
     # 1. Non-flooded segments first (Light neutral gray)
     for line, fl in zip(lines, flood_labels):
@@ -87,11 +87,11 @@ def generate_fig1_study_area(geoms_wkt, flood_labels, out_path_svg):
             svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linecap="round" opacity="0.95"/>')
 
     # Legend (Clean white card)
-    svg.append(f'<rect x="{ox + 15}" y="{oy + 15}" width="250" height="72" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4" opacity="0.96"/>')
+    svg.append(f'<rect x="{ox + 15}" y="{oy + 15}" width="285" height="72" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4" opacity="0.96"/>')
     svg.append(f'<line x1="{ox + 30}" y1="{oy + 38}" x2="{ox + 60}" y2="{oy + 38}" stroke="#cbd5e1" stroke-width="2.5"/>')
-    svg.append(f'<text x="{ox + 70}" y="{oy + 42}" font-family="{FONT_STACK}" font-size="10.5" fill="{TEXT_SUBTITLE}">Passable / Non-Flooded (y = 0)</text>')
+    svg.append(f'<text x="{ox + 70}" y="{oy + 42}" font-family="{FONT_STACK}" font-size="10.5" fill="{TEXT_SUBTITLE}">Passable (≤30 cm, y = 0)</text>')
     svg.append(f'<line x1="{ox + 30}" y1="{oy + 62}" x2="{ox + 60}" y2="{oy + 62}" stroke="#dc2626" stroke-width="3"/>')
-    svg.append(f'<text x="{ox + 70}" y="{oy + 66}" font-family="{FONT_STACK}" font-size="10.5" font-weight="bold" fill="#dc2626">Observed Flooded (&gt;30 cm, y = 1)</text>')
+    svg.append(f'<text x="{ox + 70}" y="{oy + 66}" font-family="{FONT_STACK}" font-size="10.5" font-weight="bold" fill="#dc2626">Simulated Impassable (&gt;30 cm, y = 1)</text>')
 
     # North Indicator
     nx, ny = ox + pw - 30, oy + 35
@@ -270,7 +270,7 @@ def generate_fig4_risk_map(geoms_wkt, probs, out_path_svg):
     
     # Title & Subtitle
     svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Da Nang (Hai Chau): Out-of-Fold Road Flood Risk Map</text>')
-    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Predicted Inundation Probability Under 5-Fold Spatial Block Validation</text>')
+    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Random Forest Out-of-Fold Probability Under 5-Fold Spatial Block Validation</text>')
 
     for line, p in zip(lines, probs):
         if p >= 0.66:
@@ -490,7 +490,7 @@ def generate_fig8_lambda_tradeoff(lambda_curves_data, out_path_svg):
 </defs>''')
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
 
-    svg.append(f'<text x="{w/2}" y="28" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Trade-off Curves: Flood Exposure vs Travel-Time Increase Across Risk Aversion λ ∈ [1, 20]</text>')
+    svg.append(f'<text x="{w/2}" y="28" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Trade-off Curves: Flood Exposure vs Travel-Time Increase Across Risk Aversion λ = 1 to 20</text>')
     svg.append(f'<text x="{w/2}" y="46" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Parametric sweep: λ controls penalty severity C_i = t_i (1 + λ p_i)</text>')
 
     # Dynamically determine bounds to prevent out-of-bound coordinates
@@ -524,7 +524,7 @@ def generate_fig8_lambda_tradeoff(lambda_curves_data, out_path_svg):
     leg_x = 650
     svg.append(f'<rect x="{leg_x}" y="{oy}" width="205" height="{ph}" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4"/>')
     svg.append(f'<text x="{leg_x + 15}" y="{oy + 24}" font-family="{FONT_STACK}" font-size="11" font-weight="bold" fill="{TEXT_TITLE}">Models &amp; Baselines</text>')
-    svg.append(f'<text x="{leg_x + 15}" y="{oy + 40}" font-family="{FONT_STACK}" font-size="9.5" fill="{TEXT_MUTED}">Curves over λ ∈ [1, 20]</text>')
+    svg.append(f'<text x="{leg_x + 15}" y="{oy + 40}" font-family="{FONT_STACK}" font-size="9.5" fill="{TEXT_MUTED}">Curves over λ = 1 to 20</text>')
 
     # Render curves with STRICT CLIPPING
     svg.append('<g clip-path="url(#fig8-plot-clip)">')
@@ -577,8 +577,8 @@ def generate_fig9_representative_route(geoms_wkt, flood_labels, routes_dict, out
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
     
     # Title & Subtitle
-    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Representative Origin-Destination Navigation: Shortest Path vs ML vs Oracle</text>')
-    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Shortest path penetrates 14 flooded segments (951 m); flood-aware routing detours safely around inundation</text>')
+    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Representative Origin-Destination Navigation: Shortest Path vs XGBoost vs Oracle</text>')
+    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Shortest path crosses 14 flooded segments (951 m); XGBoost flood-aware route crosses 6 (344 m)</text>')
 
     # 1. Base network on white background
     for line, fl in zip(lines, flood_labels):
@@ -619,8 +619,8 @@ def generate_fig9_representative_route(geoms_wkt, flood_labels, routes_dict, out
     svg.append(f'<rect x="{ox + 15}" y="{oy + 15}" width="310" height="110" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4" opacity="0.96"/>')
     leg_items = [
         ('Shortest Path (High Exposure: 951 m inundated)', '#dc2626', '3.2'),
-        ('ML Flood-Aware Route (Detour: 108 m inundated)', '#2563eb', '3.2'),
-        ('Oracle Optimal Route (Ground Truth: 0 m inundated)', '#16a34a', '3.2'),
+        ('XGBoost Flood-Aware Route (344 m flooded)', '#2563eb', '3.2'),
+        ('Oracle Route (Simulated Labels: 0 m flooded)', '#16a34a', '3.2'),
         ('Background Flooded Segments (>30 cm)', '#fecaca', '2.0')
     ]
     for idx, (label, col, lw_leg) in enumerate(leg_items):

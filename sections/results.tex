@@ -33,7 +33,7 @@ Table~\ref{tab:models} compares the six models, and Fig.~\ref{fig:curves} shows 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{fig2_roc_pr_curves}
-  \caption{ROC (left) and precision--recall (right) curves under spatial block cross-validation. The dashed line in the right panel is the no-skill baseline (0.425).}
+  \caption{ROC (left) and precision--recall (right) curves under spatial block cross-validation. The dashed line in the right panel is the no-skill baseline (0.425). Legend values are computed on pooled out-of-fold predictions, so they differ slightly from the fold means in Table~\ref{tab:models}.}
   \label{fig:curves}
 \end{figure}
 
@@ -144,7 +144,7 @@ Fig.~\ref{fig:route} shows one OD pair crossing the central corridor, chosen as 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{fig9_representative_route}
-  \caption{Routes for a representative OD pair: shortest time (red), flood-aware ML detour (blue), and oracle (green).}
+  \caption{Routes for a representative OD pair: shortest time (red), XGBoost flood-aware route (blue), and oracle on simulated labels (green).}
   \label{fig:route}
 \end{figure}
 
