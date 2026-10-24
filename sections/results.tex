@@ -3,10 +3,10 @@
 \label{sec:results}
 
 \subsection{Flood Labels}
-Of the 2,059 segments, 876 (42.5\%) were observed flooded ($y=1$), 139 (6.8\%) were passable, and 1,044 were excluded as uncertain. The flooded segments cluster along the low-lying bank of the Han River and around natural depression basins, including the Dien Bien Phu underpass.
+Of the 2,059 segments, 876 (42.5\%) are impassable in the simulation ($y=1$), 1,044 (50.7\%) are flooded but passable, and 139 (6.8\%) are passable. Only 6.8\% of the network stays below 10~cm, so the event affected almost the whole district. The impassable segments cluster along the low-lying bank of the Han River and around natural depressions, including the Dien Bien Phu underpass.
 
 \subsection{Classification Benchmark}
-Table~\ref{tab:models} compares the six models, and Fig.~\ref{fig:curves} shows their ROC and precision--recall curves under spatial cross-validation. Multilayer perceptron (MLP) achieved the highest AUC-PR (0.891 $\pm$ 0.042) and flooded recall (0.847 $\pm$ 0.049), followed closely by Random Forest (AUC-PR 0.874 $\pm$ 0.053) and GraphSAGE (AUC-PR 0.867 $\pm$ 0.071). A Friedman test across the spatial folds indicated consistent ranking ($\chi^2 = 7.40$, $p = 0.193$), while pairwise Wilcoxon signed-rank tests demonstrated significant improvements over the linear baseline ($p < 0.10$).
+Table~\ref{tab:models} compares the six models, and Fig.~\ref{fig:curves} shows their ROC and precision--recall curves under spatial cross-validation. Random forest achieved the highest AUC-PR ($0.840 \pm 0.077$), followed by the MLP ($0.833 \pm 0.067$), XGBoost ($0.831 \pm 0.081$), and GraphSAGE ($0.823 \pm 0.083$); logistic regression was lowest ($0.784 \pm 0.111$). These differences are small compared with the variation between folds. The Friedman test found no significant difference among the six models ($\chi^2 = 7.86$, $p = 0.164$), and pairwise Wilcoxon tests against random forest gave $p = 0.0625$ for LR, the smallest value possible with five folds, and $p \ge 0.31$ for the other models. GraphSAGE reached the highest recall on impassable segments ($0.852 \pm 0.043$) and F1 ($0.791 \pm 0.057$), and random forest the lowest Brier score ($0.127 \pm 0.012$).
 
 \begin{table*}[t]
   \caption{Classification Benchmark Under Spatial Block Cross-Validation (Mean $\pm$ Standard Deviation Over Five Folds)}
@@ -19,14 +19,14 @@ Table~\ref{tab:models} compares the six models, and Fig.~\ref{fig:curves} shows 
     \cmidrule(lr){3-7}\cmidrule(lr){8-8}
     Model & Family & AUC-PR & AUC-ROC & F1 & Recall (flooded) & Brier score $\downarrow$ & AUC-ROC \\
     \midrule
-    Logistic regression & Linear        & 0.840 $\pm$ 0.052 & 0.869 $\pm$ 0.032 & 0.755 $\pm$ 0.064 & 0.761 $\pm$ 0.119 & 0.148 $\pm$ 0.022 & 0.897 $\pm$ 0.017 \\
-    SVM (RBF)           & Kernel        & 0.856 $\pm$ 0.055 & 0.901 $\pm$ 0.024 & 0.783 $\pm$ 0.067 & 0.784 $\pm$ 0.090 & 0.126 $\pm$ 0.020 & 0.936 $\pm$ 0.009 \\
-    Random forest       & Tree ensemble & 0.874 $\pm$ 0.053 & 0.909 $\pm$ 0.028 & 0.792 $\pm$ 0.068 & 0.803 $\pm$ 0.096 & 0.122 $\pm$ 0.019 & \textbf{0.992 $\pm$ 0.005} \\
-    XGBoost             & Tree ensemble & 0.847 $\pm$ 0.071 & 0.896 $\pm$ 0.030 & 0.799 $\pm$ 0.060 & 0.839 $\pm$ 0.110 & 0.131 $\pm$ 0.022 & 0.978 $\pm$ 0.007 \\
-    MLP                 & Neural        & \textbf{0.891 $\pm$ 0.042} & \textbf{0.911 $\pm$ 0.027} & \textbf{0.808 $\pm$ 0.043} & \textbf{0.847 $\pm$ 0.049} & 0.124 $\pm$ 0.023 & 0.948 $\pm$ 0.011 \\
-    GraphSAGE           & Graph         & 0.867 $\pm$ 0.071 & 0.897 $\pm$ 0.029 & 0.789 $\pm$ 0.051 & 0.826 $\pm$ 0.047 & 0.147 $\pm$ 0.043 & 0.969 $\pm$ 0.011 \\
+    Logistic regression & Linear        & 0.784 $\pm$ 0.111 & 0.862 $\pm$ 0.023 & 0.739 $\pm$ 0.086 & 0.757 $\pm$ 0.108 & 0.148 $\pm$ 0.013 & 0.897 $\pm$ 0.017 \\
+    SVM (RBF)           & Kernel        & 0.796 $\pm$ 0.095 & 0.889 $\pm$ 0.019 & 0.745 $\pm$ 0.097 & 0.755 $\pm$ 0.102 & 0.129 $\pm$ 0.013 & 0.936 $\pm$ 0.009 \\
+    Random forest       & Tree ensemble & \textbf{0.840 $\pm$ 0.077} & \textbf{0.897 $\pm$ 0.023} & 0.757 $\pm$ 0.110 & 0.747 $\pm$ 0.139 & \textbf{0.127 $\pm$ 0.012} & 0.992 $\pm$ 0.005 \\
+    XGBoost             & Tree ensemble & 0.831 $\pm$ 0.081 & 0.893 $\pm$ 0.025 & 0.747 $\pm$ 0.092 & 0.749 $\pm$ 0.145 & 0.136 $\pm$ 0.017 & 0.978 $\pm$ 0.007 \\
+    MLP                 & Neural        & 0.833 $\pm$ 0.067 & 0.893 $\pm$ 0.025 & 0.784 $\pm$ 0.065 & 0.816 $\pm$ 0.097 & 0.132 $\pm$ 0.018 & 0.948 $\pm$ 0.011 \\
+    GraphSAGE           & Graph         & 0.823 $\pm$ 0.083 & 0.892 $\pm$ 0.032 & \textbf{0.791 $\pm$ 0.057} & \textbf{0.852 $\pm$ 0.043} & 0.139 $\pm$ 0.030 & 0.969 $\pm$ 0.011 \\
     \bottomrule
-    \multicolumn{8}{l}{\scriptsize Best value per column in bold. $\downarrow$: lower is better.}
+    \multicolumn{8}{l}{\scriptsize Best spatial-CV value per column in bold. $\downarrow$: lower is better. No-skill AUC-PR: 0.425.}
   \end{tabular}
 \end{table*}
 
@@ -38,7 +38,7 @@ Table~\ref{tab:models} compares the six models, and Fig.~\ref{fig:curves} shows 
 \end{figure}
 
 \subsection{Optimism of Random Cross-Validation}
-Fig.~\ref{fig:gap} compares AUC-ROC under random and spatial cross-validation. The optimism gap $\Delta_m$ spans from $+0.027$ (LR) to $+0.082$ (Random Forest and XGBoost). Tree ensembles suffer the largest inflation due to spatial autocorrelation leakage, while neural and linear models show more modest gaps (+0.037 and +0.027). Furthermore, model rankings shift noticeably when spatial blocks are enforced.
+Fig.~\ref{fig:gap} compares AUC-ROC under random and spatial cross-validation. Every model scored higher under random cross-validation, with optimism gaps $\Delta_m$ from $+0.034$ (LR) to $+0.094$ (random forest). The tree ensembles were inflated most (random forest $+0.094$, XGBoost $+0.085$), followed by GraphSAGE ($+0.077$), the MLP ($+0.054$), and the SVM ($+0.047$). Under random cross-validation, random forest would appear near-perfect (AUC-ROC 0.992); under spatial cross-validation, all models except LR lie between 0.889 and 0.897.
 
 \begin{figure}[t]
   \centering
@@ -48,31 +48,31 @@ Fig.~\ref{fig:gap} compares AUC-ROC under random and spatial cross-validation. T
 \end{figure}
 
 \subsection{Risk Map and Feature Effects}
-Fig.~\ref{fig:riskmap} maps the out-of-fold flood probability of each segment for the best model. 36.4\% of the segments fall in the high-risk class ($p \ge 0.66$), concentrated in the low-lying inner-city wards along the Han River basin and near the Dien Bien Phu underpass. Fig.~\ref{fig:shap} summarizes the SHAP values of the best model. The top three features are depression depth (mean $|\text{SHAP}|=1.592$), topographic position index (0.992), and distance to the Han River (0.499), with deeper depressions and lower elevation strongly elevating flood risk. Fig.~\ref{fig:shaprank} compares the feature rankings of all six models. The models broadly agree on elevation and depression depth as the primary drivers, while GraphSAGE places higher relative weight on topological network features.
+Fig.~\ref{fig:riskmap} maps the out-of-fold flood probability of each segment for random forest, the best classifier. \NRx{verify the share of segments with $p \ge 0.66$ (currently stated as 36.4\%) from the notebook} of the segments fall in the high-risk class, concentrated in the low-lying wards along the Han River and near the Dien Bien Phu underpass. Fig.~\ref{fig:shap} shows the TreeSHAP values of XGBoost. The top features are depression depth (mean $|\text{SHAP}| = 1.592$), TPI (0.992), distance to the Han River (0.499), and mean elevation (0.486); deeper depressions and lower ground raise the flood probability. Fig.~\ref{fig:shaprank} compares the feature rankings of the six models. All models rank terrain features highest: depression depth is first for four models and second for the other two, and TPI is first for LR and random forest. Network features such as betweenness and segment length rank low for every model, including GraphSAGE.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{fig4_risk_map}
-  \caption{Out-of-fold flood probability per road segment from the best model, in three risk classes.}
+  \caption{Out-of-fold flood probability per road segment from random forest, in three risk classes.}
   \label{fig:riskmap}
 \end{figure}
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{fig5_shap_importance}
-  \caption{Global feature importance via TreeSHAP (mean absolute SHAP values for XGBoost).}
+  \caption{Mean absolute TreeSHAP values of XGBoost fitted to all segments.}
   \label{fig:shap}
 \end{figure}
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{fig6_model_feature_ranks}
-  \caption{Rank of each feature by importance across the six models (1 = most important).}
+  \caption{Rank of each feature by model-specific importance across the six models (1 = most important).}
   \label{fig:shaprank}
 \end{figure}
 
 \subsection{Feature-Group Ablation}
-Table~\ref{tab:ablation} reports the change in performance when each feature group is removed, and the effect of the graph structure in GraphSAGE. Terrain features provide the largest marginal predictive contribution ($\Delta\text{AUC-PR} = -0.254$), followed by rainfall and hydrology. Removing network connectivity from GraphSAGE drops performance by 0.021 AUC-PR, confirming the utility of topological message passing.
+Table~\ref{tab:ablation} reports AUC-PR when each feature group is removed. Terrain features matter most: removing them lowers AUC-PR from 0.831 to 0.575 for XGBoost and from 0.823 to 0.484 for GraphSAGE. Removing the distance to the river costs 0.019 for XGBoost and 0.070 for GraphSAGE. Removing the rainfall or network features leaves XGBoost unchanged, as expected for the constant rainfall features. For GraphSAGE, the same constant rainfall features change AUC-PR by $-0.019$, which shows that its run-to-run variation is about 0.02. The graph ablations ($-0.016$ without edges, $+0.001$ with one layer) fall within this variation, so the benchmark gives no evidence that road connectivity improves prediction; only a third layer clearly hurts ($-0.070$).
 
 \begin{table}[t]
   \caption{Feature-Group and Graph Ablation (AUC-PR Under Spatial CV)}
@@ -84,22 +84,22 @@ Table~\ref{tab:ablation} reports the change in performance when each feature gro
     \toprule
     Setting & XGBoost & GraphSAGE & $\Delta$AUC-PR \\
     \midrule
-    All features (Baseline)   & 0.847 & 0.867 & -- \\
-    $-$ Terrain               & 0.612 & 0.613 & -0.254 \\
-    $-$ Hydrological          & 0.831 & 0.851 & -0.016 \\
-    $-$ Rainfall              & 0.825 & 0.845 & -0.022 \\
-    $-$ Network               & 0.862 & 0.910 & +0.043 \\
+    All features (baseline)   & 0.831 & 0.823 & -- \\
+    $-$ Terrain               & 0.575 & 0.484 & $-0.339$ \\
+    $-$ Hydrological          & 0.812 & 0.753 & $-0.070$ \\
+    $-$ Rainfall (constant)   & 0.831 & 0.804 & $-0.019$ \\
+    $-$ Network               & 0.831 & 0.845 & $+0.022$ \\
     \midrule
-    GraphSAGE, no graph edges & --    & 0.846 & -0.021 \\
-    GraphSAGE, 1 layer        & --    & 0.861 & -0.006 \\
-    GraphSAGE, 3 layers       & --    & 0.847 & -0.020 \\
+    GraphSAGE, no graph edges & --    & 0.807 & $-0.016$ \\
+    GraphSAGE, 1 layer        & --    & 0.824 & $+0.001$ \\
+    GraphSAGE, 3 layers       & --    & 0.753 & $-0.070$ \\
     \bottomrule
     \multicolumn{4}{l}{\scriptsize $\Delta$: change for GraphSAGE relative to all-feature baseline.}
   \end{tabular}
 \end{table}
 
 \subsection{Downstream Routing}
-Table~\ref{tab:routing} compares the routing results of the six models with the two baselines, and Fig.~\ref{fig:tradeoff} plots flood exposure against travel-time increase. MLP achieved the fewest flooded segments (9.55 per trip) and shortest flooded length (599.0~m), closely approaching the oracle baseline (8.03 segments, 485.6~m) with a 20.3\% travel-time increase over the uninformed shortest path. Fig.~\ref{fig:pareto} shows the trade-off curve of each model as $\lambda$ varies over $[1, 20]$. MLP and XGBoost consistently define the lower-left Pareto frontier across risk aversion settings.
+Table~\ref{tab:routing} compares the routing results of the six models with the two baselines, and Fig.~\ref{fig:tradeoff} plots flood exposure against travel-time increase. At $\lambda=5$, the MLP gave the fewest flooded segments (10.35 per trip) and the shortest flooded length (625.8~m), 41.2\% less than the shortest-time route, at a median travel-time increase of 16.5\%. XGBoost followed (639.8~m, +13.5\%), and random forest, the best classifier, ranked third (683.6~m) with the smallest detour among the nonlinear models (+7.6\%). The routing ranking therefore differs from the AUC-PR ranking at the top, although LR is last on both. Part of the difference comes from detour size: the models' probabilities lead to different detours at the same $\lambda$. Fig.~\ref{fig:pareto} compares the models at equal travel-time cost as $\lambda$ varies; there the curves of the nonlinear models lie close together, with XGBoost lowest over most of the range. Even the oracle route still crossed at least one flooded segment in 94.7\% of the OD pairs (8.03 segments and 485.6~m per trip), because 42.5\% of the network is impassable and long detours are penalized.
 
 \begin{table}[t]
   \caption{Routing Results Over 150 OD Pairs ($\lambda=5.0$)}
@@ -107,19 +107,20 @@ Table~\ref{tab:routing} compares the routing results of the six models with the 
   \centering
   \footnotesize
   \setlength{\tabcolsep}{4pt}
-  \begin{tabular}{lcccc}
+  \begin{tabular}{lccc}
     \toprule
-    Strategy & \shortstack{Flooded seg.\\per trip} & \shortstack{Flooded\\length (m)} & \shortstack{Time increase\\(median, \%)} & \shortstack{No safe\\route (\%)} \\
+    Strategy & \shortstack{Flooded seg.\\per trip} & \shortstack{Flooded\\length (m)} & \shortstack{Time increase\\(median, \%)} \\
     \midrule
-    Shortest time      & 16.76 & 1063.6 & 0.0  & -- \\
-    LR                 & 12.25 & 756.1  & 5.4  & 94.7\% \\
-    SVM (RBF)          & 10.65 & 653.1  & 9.2  & 94.7\% \\
-    Random forest      & 10.69 & 655.7  & 9.7  & 94.7\% \\
-    XGBoost            & 10.50 & 650.0  & 11.3 & 94.7\% \\
-    MLP                & \textbf{9.55} & \textbf{599.0} & 20.3 & 94.7\% \\
-    GraphSAGE          & 10.73 & 677.5  & 13.7 & 94.7\% \\
-    Oracle (observed)  & 8.03  & 485.6  & 21.9 & 94.7\% \\
+    Shortest time      & 16.76 & 1063.6 & 0.0  \\
+    LR                 & 12.87 & 780.7  & 4.1  \\
+    SVM (RBF)          & 11.25 & 692.6  & 11.6 \\
+    Random forest      & 11.15 & 683.6  & 7.6  \\
+    XGBoost            & 10.47 & 639.8  & 13.5 \\
+    MLP                & \textbf{10.35} & \textbf{625.8} & 16.5 \\
+    GraphSAGE          & 11.20 & 689.5  & 18.9 \\
+    Oracle (simulated) & 8.03  & 485.6  & 21.9 \\
     \bottomrule
+    \multicolumn{4}{l}{\scriptsize Oracle still crosses flooding in 94.7\% of OD pairs.}
   \end{tabular}
 \end{table}
 
@@ -133,12 +134,12 @@ Table~\ref{tab:routing} compares the routing results of the six models with the 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{fig8_lambda_tradeoff_curves}
-  \caption{Trade-off between flood exposure and travel-time increase as risk aversion $\lambda$ varies from 1 to 20.}
+  \caption{Trade-off between flood exposure and travel-time increase as risk aversion $\lambda$ varies from 1 to 20 (first 50 OD pairs).}
   \label{fig:pareto}
 \end{figure}
 
 \subsection{Representative Route}
-Fig.~\ref{fig:route} shows the routes of one representative OD pair crossing the central corridor, and Table~\ref{tab:route} lists their metrics. While the shortest-time path traverses 14 inundated segments (951.0~m), the flood-aware models detour safely around the flooded zone, reducing inundated length to 108.4~m (88.6\% reduction) with only 1.85~minutes of added travel time.
+Fig.~\ref{fig:route} shows one OD pair crossing the central corridor, chosen as a case in which the shortest-time route crosses at least 400~m of flooding and the oracle avoids it completely; Table~\ref{tab:route} lists the metrics. The shortest-time route crosses 14 flooded segments (951.0~m). The MLP route reduces this to 2 segments (108.4~m) for 1.85 extra minutes, and the XGBoost route to 6 segments (344.2~m) for 1.24 extra minutes.
 
 \begin{figure}[t]
   \centering
@@ -158,15 +159,15 @@ Fig.~\ref{fig:route} shows the routes of one representative OD pair crossing the
     Strategy & \shortstack{Travel\\time (min)} & \shortstack{Flooded\\segments} & \shortstack{Flooded\\length (m)} \\
     \midrule
     Shortest time     & 3.08 & 14 & 951.0 \\
-    XGBoost           & 4.93 & 2  & 108.4 \\
+    XGBoost           & 4.32 & 6  & 344.2 \\
     MLP               & 4.93 & 2  & 108.4 \\
-    Oracle (observed) & 5.08 & 0  & 0.0 \\
+    Oracle (simulated) & 5.08 & 0 & 0.0 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsection{Computational Efficiency}
-Table~\ref{tab:efficiency} reports the size and run time of each model. Logistic regression is the fastest (0.01~s training, 12.6~ms district inference), while MLP achieves the best combination of accuracy and speed (3,329 parameters, 0.34~s training, 1.6~ms inference). GraphSAGE requires 0.52~s to train and 8.3~ms for district inference, well within emergency response latency limits. Routing execution averaged 4.2~ms per OD pair across all models.
+Table~\ref{tab:efficiency} reports the size and run time of each model. All models trained in under 0.5~s and predicted the whole district in under 90~ms. LR was the fastest to train (0.01~s) and predict (2.4~ms), and the SVM the slowest to predict (88.8~ms). Routing took 2.3~ms per OD pair.
 
 \begin{table}[t]
   \caption{Model Size and Run Time}
@@ -178,20 +179,20 @@ Table~\ref{tab:efficiency} reports the size and run time of each model. Logistic
     \toprule
     Model & \shortstack{Parameters} & \shortstack{Training\\time (s)} & \shortstack{Inference,\\district (ms)} & AUC-PR \\
     \midrule
-    LR        & 19     & 0.01 & 12.6 & 0.840 \\
-    SVM (RBF) & 37,062 & 0.34 & 97.4 & 0.856 \\
-    RF        & 50,000 & 0.27 & 45.5 & 0.874 \\
-    XGBoost   & 3,200  & 0.10 & 7.0  & 0.847 \\
-    MLP       & 3,329  & 0.34 & 1.6  & \textbf{0.891} \\
-    GraphSAGE & 3,297  & 0.52 & 8.3  & 0.867 \\
+    LR        & 19     & 0.01 & 2.4  & 0.784 \\
+    SVM (RBF) & 37,062\textsuperscript{a} & 0.30 & 88.8 & 0.796 \\
+    RF        & 50,000\textsuperscript{a} & 0.25 & 43.3 & \textbf{0.840} \\
+    XGBoost   & 3,200\textsuperscript{a}  & 0.11 & 5.5  & 0.831 \\
+    MLP       & 3,329  & 0.32 & 12.3 & 0.833 \\
+    GraphSAGE & 3,297  & 0.43 & 8.8  & 0.823 \\
     \bottomrule
-    \multicolumn{5}{l}{\scriptsize Routing time per OD pair: 4.2 ms for all models.}
+    \multicolumn{5}{l}{\scriptsize \textsuperscript{a}Approximate size. Routing time per OD pair: 2.3 ms.}
   \end{tabular}
 \end{table}
 
 \subsection{Sensitivity Analysis}
 \label{sec:sensitivity}
-Fig.~\ref{fig:sensitivity} and Table~\ref{tab:sensitivity} show how the results change with spatial block size and the handling of uncertain segments. Model rankings remained stable across block scales from 250~m (AUC-PR 0.883) to 1000~m (AUC-PR 0.853). Treating uncertain segments as non-flooded preserves conservative boundaries (AUC-PR 0.847), while excluding uncertain segments yields 0.987 AUC-PR due to sharper class margins.
+Fig.~\ref{fig:sensitivity} and Table~\ref{tab:sensitivity} show how XGBoost's results change with the block size and the labeling. AUC-PR varied between 0.831 and 0.883 across block sizes of 250 to 1000~m, with the highest value for the smallest blocks, which leave more neighbors of each test segment in the training set. The alternative labelings give AUC-PR values near 0.99, but these are close to their much higher no-skill baselines: excluding flooded-but-passable segments leaves 86.3\% of the remaining segments flooded, and labeling every segment deeper than 10~cm as flooded makes 93.2\% flooded. Their AUC-ROC values (0.940 and 0.853) show that the task is easier when the 10--30~cm segments are removed and harder when they count as flooded.
 
 \begin{figure}[t]
   \centering
@@ -201,22 +202,22 @@ Fig.~\ref{fig:sensitivity} and Table~\ref{tab:sensitivity} show how the results 
 \end{figure}
 
 \begin{table}[t]
-  \caption{Sensitivity of the Best Model to Validation and Labeling Settings}
+  \caption{Sensitivity of XGBoost to Validation and Labeling Settings}
   \label{tab:sensitivity}
   \centering
   \footnotesize
   \setlength{\tabcolsep}{4pt}
   \begin{tabular}{lccc}
     \toprule
-    Setting & AUC-PR & Recall & Brier $\downarrow$ \\
+    Setting & AUC-PR & \shortstack{No-skill\\AUC-PR} & AUC-ROC \\
     \midrule
-    Block size 250~m                   & 0.883 & 0.839 & 0.131 \\
-    Block size 500~m (main)            & 0.847 & 0.839 & 0.131 \\
-    Block size 1000~m                  & 0.853 & 0.839 & 0.131 \\
+    Block size 250~m                   & 0.883 & 0.425 & 0.912 \\
+    Block size 500~m (main)            & 0.831 & 0.425 & 0.893 \\
+    Block size 1000~m                  & 0.847 & 0.425 & 0.888 \\
     \midrule
-    Uncertain segments excluded        & 0.987 & 0.955 & 0.053 \\
-    Uncertain segments as non-flooded (main) & 0.847 & 0.839 & 0.131 \\
-    Broad flood ($\ge$10~cm)           & 0.986 & 0.903 & 0.087 \\
+    10--30~cm segments excluded        & 0.991 & 0.863 & 0.940 \\
+    10--30~cm as non-flooded (main)    & 0.831 & 0.425 & 0.893 \\
+    10--30~cm as flooded ($\ge$10~cm)  & 0.987 & 0.932 & 0.853 \\
     \bottomrule
   \end{tabular}
 \end{table}
