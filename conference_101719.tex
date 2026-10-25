@@ -18,6 +18,17 @@
 
 \graphicspath{{figures/}}
 
+% ---------- Float placement (keeps the paper within 6 pages) ----------
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.8}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+
 % ---------- Placeholder macros (delete before submission) ----------
 \newcommand{\NR}{\textcolor{red}{[need results]}}
 \newcommand{\NRx}[1]{\textcolor{red}{[need results: #1]}}

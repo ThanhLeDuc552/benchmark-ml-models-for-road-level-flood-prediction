@@ -10,10 +10,8 @@ Flood research in Da Nang maps susceptibility with machine learning~\cite{nguyen
 
 To answer it, this paper benchmarks six machine learning models from five families for road-level flood prediction and flood-aware routing in Hai Chau during the 2022 Da Nang flood. Its contributions are as follows:
 \begin{enumerate}
-  \item \textbf{Leakage-aware classification benchmark:} six models compared under spatial block cross-validation on simulation-derived road labels, with precision--recall, calibration, significance tests, and feature attributions.
+  \item \textbf{Leakage-aware classification benchmark:} six models compared under spatial block cross-validation on simulation-derived road labels, with calibration, significance tests, and feature attributions.
   \item \textbf{Downstream routing benchmark:} the out-of-fold probabilities of every model used as routing costs and compared with shortest-path and oracle baselines.
   \item \textbf{Classification--routing agreement:} a test of whether the two model rankings agree.
   \item \textbf{Efficiency and robustness:} the cost of each model, a feature-group ablation, and a sensitivity analysis.
 \end{enumerate}
-
-Section~\ref{sec:related} reviews related work, Section~\ref{sec:data} describes the case study, Section~\ref{sec:method} formulates the problem and the benchmark, Section~\ref{sec:results} reports the results, Section~\ref{sec:discussion} discusses them, and Section~\ref{sec:conclusion} concludes the paper.

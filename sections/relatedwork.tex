@@ -2,37 +2,8 @@
 \section{Related Work}
 \label{sec:related}
 
-\subsection{Flood Studies in Da Nang}
 Nguyen et al.~\cite{nguyen2026} compared five tree ensembles across the city (AUC 0.983--0.989) and placed Hai Chau in the high and very-high susceptibility classes, and Hoang et al.~\cite{hoang2025} trained XGBoost on 1,000 flood points from media reports (accuracy 0.93). Both used random train--test splits, which overstate accuracy when nearby samples are correlated~\cite{roberts2017}. Doan et al.~\cite{doan2023} simulated the 2022 rainfall with MIKE Urban and found that riverside manholes flooded when high river levels blocked the outfalls, and Nguyen and Quach~\cite{nguyenquach2024} mapped the October 2022 flooding from Sentinel-1 imagery, mostly outside the dense urban core.
 
-\subsection{Road-Level Flood Prediction}
 Ha et al.~\cite{ha2021} mapped flash-flood susceptibility along a highway in Hoa Binh, and Sadler et al.~\cite{sadler2018} modeled street flood severity from crowdsourced reports. Yuan et al.~\cite{yuan2023} are closest to this work: random forest predicted flooded roads in Harris County, Texas, from topographic, hydrologic, and precipitation features (AUC 0.86 for Hurricane Harvey), but under random cross-validation. Pan et al.~\cite{pan2026} used a Bayesian network to place road flood sensors in New York City; their work observes flooding on segments, whereas this paper predicts it. Graph neural networks such as GraphSAGE~\cite{hamilton2017} can use the connectivity between segments, but they have not been compared with feature-based models for this task.
 
-\subsection{Routing Under Disruption}
-Le et al. reviewed optimization models for urban route planning~\cite{atr2026} and investigated the spatiotemporal impacts of route optimization on road networks~\cite{treng2026}. More recently, Le et al.~\cite{le2026} optimized urban bus routes in Da Nang with multi-objective deep reinforcement learning, without hazard costs. Linking segment-level flood probabilities to routing connects these two lines of work.
-
-\begin{table*}[t]
-  \caption{Summary of Related Flood Prediction and Routing Studies}
-  \label{tab:related}
-  \centering
-  \footnotesize
-  \begin{tabular}{llllccc}
-    \toprule
-    Study & Area & Prediction unit & Models compared & Spatial validation & Calibration & Routing tested \\
-    \midrule
-    Nguyen et al.~\cite{nguyen2026}       & Da Nang          & Area         & Five tree ensembles   & $\times$ & $\times$ & $\times$ \\
-    Hoang et al.~\cite{hoang2025}         & Da Nang          & Point        & XGBoost               & $\times$ & $\times$ & $\times$ \\
-    Ha et al.~\cite{ha2021}               & Hoa Binh         & Road corridor & REPT and hybrid ensembles & $\times$ & $\times$ & $\times$ \\
-    Sadler et al.~\cite{sadler2018}       & Norfolk, VA      & Street       & Poisson regression, RF & $\times$ & $\times$ & $\times$ \\
-    Yuan et al.~\cite{yuan2023}           & Harris County    & Road         & RF, AdaBoost          & $\times$ & $\times$ & $\times$ \\
-    Pan et al.~\cite{pan2026}             & New York City    & Expressway   & Bayesian network      & --       & --       & $\times$ \\
-    Le et al.~\cite{le2026}               & Da Nang          & Route        & Deep RL               & --       & --       & \checkmark\textsuperscript{a} \\
-    \midrule
-    \textbf{This paper}                   & Da Nang (Hai Chau) & Road segment & Six models, five families & \checkmark & \checkmark & \checkmark \\
-    \bottomrule
-    \multicolumn{7}{l}{\scriptsize \textsuperscript{a}Routing without flood or hazard costs.}
-  \end{tabular}
-\end{table*}
-
-As Table~\ref{tab:related} shows, no prior study combines road-level segment prediction, spatial block validation, probability calibration, and downstream flood-aware routing evaluation.
-
+Le et al. reviewed optimization models for urban route planning~\cite{atr2026} and investigated the spatiotemporal impacts of route optimization on road networks~\cite{treng2026}. More recently, Le et al.~\cite{le2026} optimized urban bus routes in Da Nang with multi-objective deep reinforcement learning, without hazard costs. Linking segment-level flood probabilities to routing connects these two lines of work, yet no prior study combines road-level segment prediction, spatial block validation, probability calibration, and downstream flood-aware routing evaluation.
