@@ -1,121 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="490" viewBox="0 0 880 490" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpkOGIwNWIzNS1lYWJjLTQ5NGYtOWM5ZC0yNmJmMmMxNTk4MTkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaFa8rd5z6SkMjFEL2yWTWjIAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo0MjA2ZDBiNS1hODBmLTQ0MmYtYTc0NS04ZjQyYjc5NTkxMGRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNovRoCxRB1k4Pzgmc/NKV2xwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggj8KGuqUwZqF85gup2hx1FuXupz0tJX4jiFd6vc1PR5SkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaN9D0Cu6QoAIjlgcEwZAhrYAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCB2DXxGMpwxpb/fuhQMNzmJ8WsSm6PUFWlEr24Q5aJEq2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiWZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmQ4YjA1YjM1LWVhYmMtNDk0Zi05YzlkLTI2YmYyYzE1OTgxOS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmVlNjdhOTc3LTliMzMtNGNmMC04M2QyLTUxMzhmYzRkMWNmZXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCPwoa6pTBmoXzmC6naHHUW5e6nPS0lfiOIV3q9zU9HlKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggPG2UUiVQ7LZJFP7zCK5/3mACbt2zams1xDzTsof5kkOiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggsO9mK/VYM7ngL0PcVUPx/Fq8fFRev4wOhicgzgJvHQZ0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQB9g6mnojekaMoeBT+X4n8dU4htjndb05hhKH5+mAYxi67RFXphD0/HuyD9FfWnBDLlCQQ0shBcNCa3Hr7B664A=</c2pa:manifest></metadata>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
 <defs>
   <clipPath id="fig8-plot-clip">
-    <rect x="80" y="65" width="540" height="360"/>
+    <rect x="180" y="60" width="940" height="780"/>
   </clipPath>
 </defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
-<text x="440.0" y="28" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Trade-off Curves: Flood Exposure vs Travel-Time Increase Across Risk Aversion λ = 1 to 20</text>
-<text x="440.0" y="46" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" fill="#64748b">Parametric sweep: λ controls penalty severity C_i = t_i (1 + λ p_i)</text>
-<line x1="80.0" y1="65" x2="80.0" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="80.0" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">0%</text>
-<line x1="129.0909090909091" y1="65" x2="129.0909090909091" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="129.0909090909091" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">5%</text>
-<line x1="178.1818181818182" y1="65" x2="178.1818181818182" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="178.1818181818182" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">10%</text>
-<line x1="227.27272727272725" y1="65" x2="227.27272727272725" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="227.27272727272725" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">15%</text>
-<line x1="276.3636363636364" y1="65" x2="276.3636363636364" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="276.3636363636364" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">20%</text>
-<line x1="325.45454545454544" y1="65" x2="325.45454545454544" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="325.45454545454544" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">25%</text>
-<line x1="374.5454545454545" y1="65" x2="374.5454545454545" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="374.5454545454545" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">30%</text>
-<line x1="423.6363636363636" y1="65" x2="423.6363636363636" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="423.6363636363636" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">35%</text>
-<line x1="472.72727272727275" y1="65" x2="472.72727272727275" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="472.72727272727275" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">40%</text>
-<line x1="521.8181818181819" y1="65" x2="521.8181818181819" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="521.8181818181819" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">45%</text>
-<line x1="570.9090909090909" y1="65" x2="570.9090909090909" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="570.9090909090909" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">50%</text>
-<line x1="620.0" y1="65" x2="620.0" y2="425" stroke="#f1f5f9" stroke-width="1"/>
-<text x="620.0" y="443" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">55%</text>
-<line x1="80" y1="425.0" x2="620" y2="425.0" stroke="#f1f5f9" stroke-width="1"/>
-<text x="72" y="429.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">200m</text>
-<line x1="80" y1="353.0" x2="620" y2="353.0" stroke="#f1f5f9" stroke-width="1"/>
-<text x="72" y="357.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">400m</text>
-<line x1="80" y1="281.0" x2="620" y2="281.0" stroke="#f1f5f9" stroke-width="1"/>
-<text x="72" y="285.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">600m</text>
-<line x1="80" y1="209.0" x2="620" y2="209.0" stroke="#f1f5f9" stroke-width="1"/>
-<text x="72" y="213.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">800m</text>
-<line x1="80" y1="137.0" x2="620" y2="137.0" stroke="#f1f5f9" stroke-width="1"/>
-<text x="72" y="141.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1000m</text>
-<line x1="80" y1="65.0" x2="620" y2="65.0" stroke="#f1f5f9" stroke-width="1"/>
-<text x="72" y="69.0" text-anchor="end" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10" fill="#64748b">1200m</text>
-<rect x="80" y="65" width="540" height="360" fill="none" stroke="#475569" stroke-width="1.2"/>
-<text x="350.0" y="463" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155">Median Travel Time Overhead (%)</text>
-<text x="30" y="245.0" text-anchor="middle" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#334155" transform="rotate(-90 30 245.0)">Flooded Distance per Trip (m)</text>
-<rect x="650" y="65" width="205" height="360" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" rx="4"/>
-<text x="665" y="89" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#0f172a">Models &amp; Baselines</text>
-<text x="665" y="105" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="9.5" fill="#64748b">Curves over λ = 1 to 20</text>
+<line x1="180.0" y1="60" x2="180.0" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="180.0" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">0%</text>
+<line x1="265.5" y1="60" x2="265.5" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="265.5" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">5%</text>
+<line x1="350.9" y1="60" x2="350.9" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="350.9" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">10%</text>
+<line x1="436.4" y1="60" x2="436.4" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="436.4" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">15%</text>
+<line x1="521.8" y1="60" x2="521.8" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="521.8" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">20%</text>
+<line x1="607.3" y1="60" x2="607.3" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="607.3" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">25%</text>
+<line x1="692.7" y1="60" x2="692.7" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="692.7" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">30%</text>
+<line x1="778.2" y1="60" x2="778.2" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="778.2" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">35%</text>
+<line x1="863.6" y1="60" x2="863.6" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="863.6" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">40%</text>
+<line x1="949.1" y1="60" x2="949.1" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="949.1" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">45%</text>
+<line x1="1034.5" y1="60" x2="1034.5" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="1034.5" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">50%</text>
+<line x1="1120.0" y1="60" x2="1120.0" y2="840" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="1120.0" y="882" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">55%</text>
+<line x1="180" y1="840.0" x2="1120" y2="840.0" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="160" y="850.0" text-anchor="end" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">200m</text>
+<line x1="180" y1="684.0" x2="1120" y2="684.0" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="160" y="694.0" text-anchor="end" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">400m</text>
+<line x1="180" y1="528.0" x2="1120" y2="528.0" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="160" y="538.0" text-anchor="end" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">600m</text>
+<line x1="180" y1="372.0" x2="1120" y2="372.0" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="160" y="382.0" text-anchor="end" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">800m</text>
+<line x1="180" y1="216.0" x2="1120" y2="216.0" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="160" y="226.0" text-anchor="end" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">1000m</text>
+<line x1="180" y1="60.0" x2="1120" y2="60.0" stroke="#f1f5f9" stroke-width="1.8"/>
+<text x="160" y="70.0" text-anchor="end" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="30" font-weight="600" fill="#64748b">1200m</text>
+<rect x="180" y="60" width="940" height="780" fill="none" stroke="#475569" stroke-width="2.6"/>
+<text x="650.0" y="945" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="36" font-weight="bold" fill="#334155">Median Travel Time Overhead (%)</text>
+<text x="75" y="450.0" text-anchor="middle" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="36" font-weight="bold" fill="#334155" transform="rotate(-90 75 450.0)">Flooded Distance per Trip (m)</text>
+<rect x="1160" y="60" width="420" height="780" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.6" rx="16"/>
+<text x="1195" y="125" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="38" font-weight="bold" fill="#0f172a">Models &amp; Baselines</text>
+<text x="1195" y="168" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="26" fill="#64748b">Curves over λ = 1 to 20</text>
+<line x1="1195" y1="198" x2="1545" y2="198" stroke="#e2e8f0" stroke-width="2"/>
 <g clip-path="url(#fig8-plot-clip)">
-<circle cx="80.0" cy="114.1" r="4.5" fill="#dc2626"/>
-<circle cx="80.0" cy="212.0" r="4.5" fill="#2563eb"/>
-<circle cx="80.0" cy="243.4" r="4.5" fill="#2563eb"/>
-<circle cx="106.2" cy="282.1" r="4.5" fill="#2563eb"/>
-<circle cx="130.6" cy="286.6" r="4.5" fill="#2563eb"/>
-<circle cx="134.7" cy="287.3" r="4.5" fill="#2563eb"/>
-<polyline points="80.0,212.0 80.0,243.4 106.2,282.1 130.6,286.6 134.7,287.3" fill="none" stroke="#2563eb" stroke-width="2.3" stroke-linecap="round"/>
-<circle cx="80.0" cy="235.8" r="4.5" fill="#7c3aed"/>
-<circle cx="80.0" cy="274.1" r="4.5" fill="#7c3aed"/>
-<circle cx="201.1" cy="304.8" r="4.5" fill="#7c3aed"/>
-<circle cx="289.9" cy="318.8" r="4.5" fill="#7c3aed"/>
-<circle cx="315.4" cy="328.4" r="4.5" fill="#7c3aed"/>
-<polyline points="80.0,235.8 80.0,274.1 201.1,304.8 289.9,318.8 315.4,328.4" fill="none" stroke="#7c3aed" stroke-width="2.3" stroke-linecap="round"/>
-<circle cx="80.0" cy="218.4" r="4.5" fill="#059669"/>
-<circle cx="80.0" cy="265.8" r="4.5" fill="#059669"/>
-<circle cx="134.7" cy="303.5" r="4.5" fill="#059669"/>
-<circle cx="208.6" cy="319.7" r="4.5" fill="#059669"/>
-<circle cx="214.9" cy="324.0" r="4.5" fill="#059669"/>
-<polyline points="80.0,218.4 80.0,265.8 134.7,303.5 208.6,319.7 214.9,324.0" fill="none" stroke="#059669" stroke-width="2.3" stroke-linecap="round"/>
-<circle cx="80.0" cy="228.3" r="4.5" fill="#ea580c"/>
-<circle cx="80.0" cy="277.5" r="4.5" fill="#ea580c"/>
-<circle cx="151.8" cy="312.4" r="4.5" fill="#ea580c"/>
-<circle cx="226.0" cy="324.8" r="4.5" fill="#ea580c"/>
-<circle cx="299.6" cy="330.0" r="4.5" fill="#ea580c"/>
-<polyline points="80.0,228.3 80.0,277.5 151.8,312.4 226.0,324.8 299.6,330.0" fill="none" stroke="#ea580c" stroke-width="2.3" stroke-linecap="round"/>
-<circle cx="80.0" cy="230.2" r="4.5" fill="#0891b2"/>
-<circle cx="100.9" cy="281.6" r="4.5" fill="#0891b2"/>
-<circle cx="201.7" cy="314.9" r="4.5" fill="#0891b2"/>
-<circle cx="296.1" cy="318.1" r="4.5" fill="#0891b2"/>
-<circle cx="392.1" cy="320.6" r="4.5" fill="#0891b2"/>
-<polyline points="80.0,230.2 100.9,281.6 201.7,314.9 296.1,318.1 392.1,320.6" fill="none" stroke="#0891b2" stroke-width="2.3" stroke-linecap="round"/>
-<circle cx="80.0" cy="256.2" r="4.5" fill="#d97706"/>
-<circle cx="119.7" cy="294.9" r="4.5" fill="#d97706"/>
-<circle cx="206.7" cy="298.1" r="4.5" fill="#d97706"/>
-<circle cx="361.6" cy="322.5" r="4.5" fill="#d97706"/>
-<circle cx="380.1" cy="322.7" r="4.5" fill="#d97706"/>
-<polyline points="80.0,256.2 119.7,294.9 206.7,298.1 361.6,322.5 380.1,322.7" fill="none" stroke="#d97706" stroke-width="2.3" stroke-linecap="round"/>
-<circle cx="80.0" cy="252.1" r="4.5" fill="#16a34a"/>
-<circle cx="81.0" cy="329.1" r="4.5" fill="#16a34a"/>
-<circle cx="205.9" cy="351.1" r="4.5" fill="#16a34a"/>
-<circle cx="409.3" cy="380.7" r="4.5" fill="#16a34a"/>
-<circle cx="517.1" cy="380.4" r="4.5" fill="#16a34a"/>
-<polyline points="80.0,252.1 81.0,329.1 205.9,351.1 409.3,380.7 517.1,380.4" fill="none" stroke="#16a34a" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="180.0" cy="166.4" r="9.5" fill="#dc2626"/>
+<circle cx="180.0" cy="378.5" r="9.5" fill="#2563eb"/>
+<circle cx="180.0" cy="446.6" r="9.5" fill="#2563eb"/>
+<circle cx="225.6" cy="530.4" r="9.5" fill="#2563eb"/>
+<circle cx="268.0" cy="540.2" r="9.5" fill="#2563eb"/>
+<circle cx="275.2" cy="541.6" r="9.5" fill="#2563eb"/>
+<polyline points="180.0,378.5 180.0,446.6 225.6,530.4 268.0,540.2 275.2,541.6" fill="none" stroke="#2563eb" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="180.0" cy="430.0" r="9.5" fill="#7c3aed"/>
+<circle cx="180.0" cy="513.0" r="9.5" fill="#7c3aed"/>
+<circle cx="390.7" cy="579.6" r="9.5" fill="#7c3aed"/>
+<circle cx="545.4" cy="609.9" r="9.5" fill="#7c3aed"/>
+<circle cx="589.8" cy="630.7" r="9.5" fill="#7c3aed"/>
+<polyline points="180.0,430.0 180.0,513.0 390.7,579.6 545.4,609.9 589.8,630.7" fill="none" stroke="#7c3aed" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="180.0" cy="392.4" r="9.5" fill="#059669"/>
+<circle cx="180.0" cy="495.1" r="9.5" fill="#059669"/>
+<circle cx="275.2" cy="576.8" r="9.5" fill="#059669"/>
+<circle cx="403.9" cy="611.9" r="9.5" fill="#059669"/>
+<circle cx="414.8" cy="621.1" r="9.5" fill="#059669"/>
+<polyline points="180.0,392.4 180.0,495.1 275.2,576.8 403.9,611.9 414.8,621.1" fill="none" stroke="#059669" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="180.0" cy="413.8" r="9.5" fill="#ea580c"/>
+<circle cx="180.0" cy="520.4" r="9.5" fill="#ea580c"/>
+<circle cx="304.9" cy="596.0" r="9.5" fill="#ea580c"/>
+<circle cx="434.1" cy="622.9" r="9.5" fill="#ea580c"/>
+<circle cx="562.3" cy="634.2" r="9.5" fill="#ea580c"/>
+<polyline points="180.0,413.8 180.0,520.4 304.9,596.0 434.1,622.9 562.3,634.2" fill="none" stroke="#ea580c" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="180.0" cy="417.9" r="9.5" fill="#0891b2"/>
+<circle cx="216.4" cy="529.3" r="9.5" fill="#0891b2"/>
+<circle cx="391.9" cy="601.5" r="9.5" fill="#0891b2"/>
+<circle cx="556.2" cy="608.4" r="9.5" fill="#0891b2"/>
+<circle cx="723.3" cy="613.8" r="9.5" fill="#0891b2"/>
+<polyline points="180.0,417.9 216.4,529.3 391.9,601.5 556.2,608.4 723.3,613.8" fill="none" stroke="#0891b2" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="180.0" cy="474.3" r="9.5" fill="#d97706"/>
+<circle cx="249.0" cy="558.1" r="9.5" fill="#d97706"/>
+<circle cx="400.5" cy="565.0" r="9.5" fill="#d97706"/>
+<circle cx="670.2" cy="617.9" r="9.5" fill="#d97706"/>
+<circle cx="702.5" cy="618.3" r="9.5" fill="#d97706"/>
+<polyline points="180.0,474.3 249.0,558.1 400.5,565.0 670.2,617.9 702.5,618.3" fill="none" stroke="#d97706" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="180.0" cy="465.4" r="9.5" fill="#16a34a"/>
+<circle cx="181.7" cy="632.2" r="9.5" fill="#16a34a"/>
+<circle cx="399.1" cy="679.9" r="9.5" fill="#16a34a"/>
+<circle cx="753.2" cy="744.0" r="9.5" fill="#16a34a"/>
+<circle cx="940.9" cy="743.4" r="9.5" fill="#16a34a"/>
+<polyline points="180.0,465.4 181.7,632.2 399.1,679.9 753.2,744.0 940.9,743.4" fill="none" stroke="#16a34a" stroke-width="6.5" stroke-linecap="round"/>
 </g>
-<line x1="665" y1="131" x2="690" y2="131" stroke="#dc2626" stroke-width="3"/>
-<circle cx="677.5" cy="131" r="3.5" fill="#dc2626"/>
-<text x="698" y="135" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Shortest time</text>
-<line x1="665" y1="165" x2="690" y2="165" stroke="#2563eb" stroke-width="3"/>
-<circle cx="677.5" cy="165" r="3.5" fill="#2563eb"/>
-<text x="698" y="169" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">LR</text>
-<line x1="665" y1="199" x2="690" y2="199" stroke="#7c3aed" stroke-width="3"/>
-<circle cx="677.5" cy="199" r="3.5" fill="#7c3aed"/>
-<text x="698" y="203" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">SVM (RBF)</text>
-<line x1="665" y1="233" x2="690" y2="233" stroke="#059669" stroke-width="3"/>
-<circle cx="677.5" cy="233" r="3.5" fill="#059669"/>
-<text x="698" y="237" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Random Forest</text>
-<line x1="665" y1="267" x2="690" y2="267" stroke="#ea580c" stroke-width="3"/>
-<circle cx="677.5" cy="267" r="3.5" fill="#ea580c"/>
-<text x="698" y="271" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">XGBoost</text>
-<line x1="665" y1="301" x2="690" y2="301" stroke="#0891b2" stroke-width="3"/>
-<circle cx="677.5" cy="301" r="3.5" fill="#0891b2"/>
-<text x="698" y="305" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">MLP</text>
-<line x1="665" y1="335" x2="690" y2="335" stroke="#d97706" stroke-width="3"/>
-<circle cx="677.5" cy="335" r="3.5" fill="#d97706"/>
-<text x="698" y="339" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">GraphSAGE</text>
-<line x1="665" y1="369" x2="690" y2="369" stroke="#16a34a" stroke-width="3"/>
-<circle cx="677.5" cy="369" r="3.5" fill="#16a34a"/>
-<text x="698" y="373" font-family="Arial, Helvetica, Segoe UI, sans-serif" font-size="10.5" font-weight="600" fill="#334155">Oracle</text>
+<line x1="1195" y1="255" x2="1255" y2="255" stroke="#dc2626" stroke-width="7.5"/>
+<circle cx="1225" cy="255" r="8.5" fill="#dc2626"/>
+<text x="1275" y="266" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">Shortest time</text>
+<line x1="1195" y1="323" x2="1255" y2="323" stroke="#2563eb" stroke-width="7.5"/>
+<circle cx="1225" cy="323" r="8.5" fill="#2563eb"/>
+<text x="1275" y="334" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">LR</text>
+<line x1="1195" y1="391" x2="1255" y2="391" stroke="#7c3aed" stroke-width="7.5"/>
+<circle cx="1225" cy="391" r="8.5" fill="#7c3aed"/>
+<text x="1275" y="402" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">SVM (RBF)</text>
+<line x1="1195" y1="459" x2="1255" y2="459" stroke="#059669" stroke-width="7.5"/>
+<circle cx="1225" cy="459" r="8.5" fill="#059669"/>
+<text x="1275" y="470" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">Random Forest</text>
+<line x1="1195" y1="527" x2="1255" y2="527" stroke="#ea580c" stroke-width="7.5"/>
+<circle cx="1225" cy="527" r="8.5" fill="#ea580c"/>
+<text x="1275" y="538" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">XGBoost</text>
+<line x1="1195" y1="595" x2="1255" y2="595" stroke="#0891b2" stroke-width="7.5"/>
+<circle cx="1225" cy="595" r="8.5" fill="#0891b2"/>
+<text x="1275" y="606" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">MLP</text>
+<line x1="1195" y1="663" x2="1255" y2="663" stroke="#d97706" stroke-width="7.5"/>
+<circle cx="1225" cy="663" r="8.5" fill="#d97706"/>
+<text x="1275" y="674" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">GraphSAGE</text>
+<line x1="1195" y1="731" x2="1255" y2="731" stroke="#16a34a" stroke-width="7.5"/>
+<circle cx="1225" cy="731" r="8.5" fill="#16a34a"/>
+<text x="1275" y="742" font-family="Times New Roman, Times, DejaVu Serif, STIXGeneral, serif" font-size="32" font-weight="bold" fill="#334155">Oracle</text>
 </svg>

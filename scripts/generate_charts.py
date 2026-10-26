@@ -23,7 +23,7 @@ OUT_DIR = str(Path(__file__).resolve().parent.parent / 'figures')
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # Publication Design Tokens
-FONT_STACK = "Arial, Helvetica, Segoe UI, sans-serif"
+FONT_STACK = "Times New Roman, Times, DejaVu Serif, STIXGeneral, serif"
 BG_WHITE = "#ffffff"
 TEXT_TITLE = "#0f172a"
 TEXT_SUBTITLE = "#334155"
@@ -46,7 +46,9 @@ COLOR_MAP = {
 
 
 def generate_fig1_study_area(geoms_wkt, flood_labels, out_path_svg):
-    """Fig. 1: Study area road network and observed flooded segments in Hai Chau."""
+    """Fig. 1: Study area road network and observed flooded segments in Hai Chau.
+    Layout: Title and legend enlarged to 3x size on top left, road map on the right side.
+    """
     lines = [wkt.loads(g) for g in geoms_wkt]
     all_coords = [pt for l in lines for pt in l.coords]
     xs = [pt[0] for pt in all_coords]
@@ -54,49 +56,68 @@ def generate_fig1_study_area(geoms_wkt, flood_labels, out_path_svg):
 
     minx, maxx = min(xs), max(xs)
     miny, maxy = min(ys), max(ys)
+    dx = maxx - minx
+    dy = maxy - miny
 
-    w, h = 680, 880
-    ox, oy, pw, ph = 40, 75, 600, 765
-    scale = min(pw / (maxx - minx), ph / (maxy - miny))
+    w, h = 1600, 1150
+    oy, ph = 60, 1030
+    scale = ph / dy
+    map_w = dx * scale
+    # Position road map on the right side
+    map_ox = w - map_w - 50
 
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">']
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
-    
-    # Title & Subtitle
-    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Hai Chau District, Da Nang: Road Network &amp; Simulated Flood Labels</text>')
-    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">HEC-RAS Simulation, 14–15 Oct 2022 | 2,059 Segments: 876 Impassable (&gt;30 cm), 1,183 Passable (≤30 cm)</text>')
 
     # 1. Non-flooded segments first (Light neutral gray)
     for line, fl in zip(lines, flood_labels):
         if fl == 0:
             pts = []
             for x, y in line.coords:
-                sx = ox + (x - minx) * scale
+                sx = map_ox + (x - minx) * scale
                 sy = oy + ph - (y - miny) * scale
                 pts.append(f"{sx:.1f},{sy:.1f}")
-            svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#cbd5e1" stroke-width="1.1" opacity="0.85"/>')
+            svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#cbd5e1" stroke-width="3.2" opacity="0.85"/>')
 
     # 2. Flooded segments on top (Vibrant crimson red)
     for line, fl in zip(lines, flood_labels):
         if fl == 1:
             pts = []
             for x, y in line.coords:
-                sx = ox + (x - minx) * scale
+                sx = map_ox + (x - minx) * scale
                 sy = oy + ph - (y - miny) * scale
                 pts.append(f"{sx:.1f},{sy:.1f}")
-            svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linecap="round" opacity="0.95"/>')
+            svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#dc2626" stroke-width="6.5" stroke-linecap="round" opacity="0.95"/>')
 
-    # Legend (Clean white card)
-    svg.append(f'<rect x="{ox + 15}" y="{oy + 15}" width="285" height="72" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4" opacity="0.96"/>')
-    svg.append(f'<line x1="{ox + 30}" y1="{oy + 38}" x2="{ox + 60}" y2="{oy + 38}" stroke="#cbd5e1" stroke-width="2.5"/>')
-    svg.append(f'<text x="{ox + 70}" y="{oy + 42}" font-family="{FONT_STACK}" font-size="10.5" fill="{TEXT_SUBTITLE}">Passable (≤30 cm, y = 0)</text>')
-    svg.append(f'<line x1="{ox + 30}" y1="{oy + 62}" x2="{ox + 60}" y2="{oy + 62}" stroke="#dc2626" stroke-width="3"/>')
-    svg.append(f'<text x="{ox + 70}" y="{oy + 66}" font-family="{FONT_STACK}" font-size="10.5" font-weight="bold" fill="#dc2626">Simulated Impassable (&gt;30 cm, y = 1)</text>')
+    # Legend Card (3x enlarged on TOP LEFT, completely separate from road network)
+    cx, cy, cw, ch = 70, 70, 720, 370
+    svg.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="3" rx="20" opacity="0.98"/>')
+    svg.append(f'<text x="{cx + 40}" y="{cy + 65}" font-family="{FONT_STACK}" font-size="39" font-weight="bold" fill="{TEXT_TITLE}">Legend &amp; Classification</text>')
+    
+    # Passable item
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 145}" x2="{cx + 155}" y2="{cy + 145}" stroke="#cbd5e1" stroke-width="13"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 138}" font-family="{FONT_STACK}" font-size="35" font-weight="bold" fill="{TEXT_SUBTITLE}">Passable (≤30 cm)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 180}" font-family="{FONT_STACK}" font-size="28" fill="{TEXT_MUTED}">1,183 segments (57.5%)</text>')
+    
+    # Impassable item
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 265}" x2="{cx + 155}" y2="{cy + 265}" stroke="#dc2626" stroke-width="14"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 258}" font-family="{FONT_STACK}" font-size="35" font-weight="bold" fill="{TEXT_dc2626 if False else "#dc2626"}">Impassable (&gt;30 cm)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 300}" font-family="{FONT_STACK}" font-size="28" font-weight="bold" fill="#b91c1c">876 segments (42.5%)</text>')
 
-    # North Indicator
-    nx, ny = ox + pw - 30, oy + 35
-    svg.append(f'<polygon points="{nx},{ny} {nx-5},{ny+14} {nx+5},{ny+14}" fill="{TEXT_TITLE}"/>')
-    svg.append(f'<text x="{nx}" y="{ny-4}" text-anchor="middle" font-family="{FONT_STACK}" font-size="10" font-weight="bold" fill="{TEXT_TITLE}">N</text>')
+    # North Indicator on Left
+    nx, ny = 430, 560
+    svg.append(f'<polygon points="{nx},{ny-38} {nx-20},{ny+15} {nx+20},{ny+15}" fill="{TEXT_TITLE}"/>')
+    svg.append(f'<text x="{nx}" y="{ny-50}" text-anchor="middle" font-family="{FONT_STACK}" font-size="39" font-weight="bold" fill="{TEXT_TITLE}">N</text>')
+
+    # Scale Bar (500 m) on Left
+    sb_w = 500 * scale
+    sb_x1 = 430 - sb_w / 2
+    sb_x2 = 430 + sb_w / 2
+    sb_y = 720
+    svg.append(f'<line x1="{sb_x1:.1f}" y1="{sb_y}" x2="{sb_x2:.1f}" y2="{sb_y}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<line x1="{sb_x1:.1f}" y1="{sb_y-12}" x2="{sb_x1:.1f}" y2="{sb_y+12}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<line x1="{sb_x2:.1f}" y1="{sb_y-12}" x2="{sb_x2:.1f}" y2="{sb_y+12}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<text x="430" y="{sb_y+44}" text-anchor="middle" font-family="{FONT_STACK}" font-size="33" font-weight="bold" fill="{TEXT_SUBTITLE}">500 m</text>')
 
     svg.append('</svg>')
     with open(out_path_svg, 'w', encoding='utf-8') as f:
@@ -155,7 +176,7 @@ def generate_fig2_roc_pr(roc_pr_data, out_path_svg):
         svg.append(f'<polyline points="{" ".join(pts_pr)}" fill="none" stroke="{col}" stroke-width="2.3" stroke-linecap="round"/>')
 
     # External Unified Legend (Placed cleanly below panels, NO overlay with curves)
-    svg.append(f'<rect x="70" y="435" width="860" height="58" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1" rx="4"/>')
+    svg.append(f'<rect x="70" y="435" width="890" height="58" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1" rx="4"/>')
     models_keys = list(roc_pr_data.keys())
     
     # Row 1 (first 3 models)
@@ -186,30 +207,28 @@ generate_fig1_roc_pr = generate_fig2_roc_pr
 
 
 def generate_fig3_optimism_gap(models, spatial_aucs, random_aucs, out_path_svg):
-    """Fig. 3: Grouped bar chart for Spatial vs Random CV."""
-    w, h = 820, 440
+    """Fig. 3: Grouped bar chart for Spatial vs Random CV enlarged to match publication text sizes."""
+    w, h = 1600, 1000
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">']
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
-    ox, oy, pw, ph = 75, 60, 680, 290
-
-    svg.append(f'<text x="{w/2}" y="30" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Optimism Gap: Random CV Overstatement vs Spatial Block CV (AUC-ROC)</text>')
+    ox, oy, pw, ph = 160, 60, 1380, 720
 
     # Grid lines & ticks
     for tick in np.linspace(0.7, 1.0, 7):
         ty = oy + (1.0 - (tick - 0.7) / 0.3) * ph
-        svg.append(f'<line x1="{ox}" y1="{ty}" x2="{ox + pw}" y2="{ty}" stroke="{GRID_LINE}" stroke-width="1"/>')
-        svg.append(f'<text x="{ox - 8}" y="{ty + 4}" text-anchor="end" font-family="{FONT_STACK}" font-size="10.5" fill="{TEXT_MUTED}">{tick:.2f}</text>')
+        svg.append(f'<line x1="{ox}" y1="{ty:.1f}" x2="{ox + pw}" y2="{ty:.1f}" stroke="{GRID_LINE}" stroke-width="1.8"/>')
+        svg.append(f'<text x="{ox - 20}" y="{ty + 10:.1f}" text-anchor="end" font-family="{FONT_STACK}" font-size="30" font-weight="600" fill="{TEXT_MUTED}">{tick:.2f}</text>')
 
-    # Bounding box
-    svg.append(f'<rect x="{ox}" y="{oy}" width="{pw}" height="{ph}" fill="none" stroke="{BORDER_AXIS}" stroke-width="1.2"/>')
-    svg.append(f'<text x="{ox - 45}" y="{oy + ph/2}" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" font-weight="600" fill="{TEXT_SUBTITLE}" transform="rotate(-90 {ox-45} {oy+ph/2})">AUC-ROC Score</text>')
+    # Bounding box & Axis label
+    svg.append(f'<rect x="{ox}" y="{oy}" width="{pw}" height="{ph}" fill="none" stroke="{BORDER_AXIS}" stroke-width="2.6"/>')
+    svg.append(f'<text x="{ox - 100}" y="{oy + ph/2:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="36" font-weight="bold" fill="{TEXT_SUBTITLE}" transform="rotate(-90 {ox-100} {oy+ph/2:.1f})">AUC-ROC Score</text>')
 
     n = len(models)
     group_w = pw / n
-    bar_w = group_w * 0.35
+    bar_w = group_w * 0.34
 
     for i, m in enumerate(models):
-        gx = ox + i * group_w + group_w * 0.15
+        gx = ox + i * group_w + group_w * 0.16
         sp_v = spatial_aucs[i]
         rd_v = random_aucs[i]
         gap = rd_v - sp_v
@@ -220,27 +239,27 @@ def generate_fig3_optimism_gap(models, spatial_aucs, random_aucs, out_path_svg):
         # Spatial bar (Blue)
         bx_sp = gx
         by_sp = oy + ph - h_sp
-        svg.append(f'<rect x="{bx_sp}" y="{by_sp}" width="{bar_w}" height="{h_sp}" fill="#2563eb" rx="2"/>')
-        svg.append(f'<text x="{bx_sp + bar_w/2}" y="{by_sp - 4}" text-anchor="middle" font-family="{FONT_STACK}" font-size="9.5" font-weight="bold" fill="#1e40af">{sp_v:.3f}</text>')
+        svg.append(f'<rect x="{bx_sp:.1f}" y="{by_sp:.1f}" width="{bar_w:.1f}" height="{h_sp:.1f}" fill="#2563eb" rx="4"/>')
+        svg.append(f'<text x="{bx_sp + bar_w/2:.1f}" y="{by_sp - 10:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="26" font-weight="bold" fill="#1e40af">{sp_v:.3f}</text>')
 
         # Random bar (Orange)
-        bx_rd = gx + bar_w + 4
+        bx_rd = gx + bar_w + 10
         by_rd = oy + ph - h_rd
-        svg.append(f'<rect x="{bx_rd}" y="{by_rd}" width="{bar_w}" height="{h_rd}" fill="#ea580c" rx="2"/>')
-        svg.append(f'<text x="{bx_rd + bar_w/2}" y="{by_rd - 4}" text-anchor="middle" font-family="{FONT_STACK}" font-size="9.5" font-weight="bold" fill="#9a3412">{rd_v:.3f}</text>')
+        svg.append(f'<rect x="{bx_rd:.1f}" y="{by_rd:.1f}" width="{bar_w:.1f}" height="{h_rd:.1f}" fill="#ea580c" rx="4"/>')
+        svg.append(f'<text x="{bx_rd + bar_w/2:.1f}" y="{by_rd - 10:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="26" font-weight="bold" fill="#9a3412">{rd_v:.3f}</text>')
 
         # Optimism gap badge
-        svg.append(f'<text x="{gx + bar_w + 2}" y="{min(by_sp, by_rd) - 16}" text-anchor="middle" font-family="{FONT_STACK}" font-size="9.5" font-weight="bold" fill="#dc2626">Δ+{gap:.3f}</text>')
+        svg.append(f'<text x="{gx + bar_w + 5:.1f}" y="{min(by_sp, by_rd) - 45:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="26" font-weight="bold" fill="#dc2626">Δ+{gap:.3f}</text>')
 
         # Model label on x-axis
-        svg.append(f'<text x="{gx + bar_w + 2}" y="{oy + ph + 20}" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" font-weight="600" fill="{TEXT_SUBTITLE}">{m}</text>')
+        svg.append(f'<text x="{gx + bar_w + 5:.1f}" y="{oy + ph + 48:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="32" font-weight="bold" fill="{TEXT_SUBTITLE}">{m}</text>')
 
     # Legend at bottom
-    ly = oy + ph + 42
-    svg.append(f'<rect x="{w/2 - 170}" y="{ly}" width="16" height="12" fill="#2563eb" rx="2"/>')
-    svg.append(f'<text x="{w/2 - 146}" y="{ly + 10}" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_SUBTITLE}">Spatial Block CV (Unbiased Benchmark)</text>')
-    svg.append(f'<rect x="{w/2 + 80}" y="{ly}" width="16" height="12" fill="#ea580c" rx="2"/>')
-    svg.append(f'<text x="{w/2 + 104}" y="{ly + 10}" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_SUBTITLE}">Random CV (Optimistically Leaked)</text>')
+    ly = oy + ph + 105
+    svg.append(f'<rect x="{w/2 - 420}" y="{ly}" width="36" height="26" fill="#2563eb" rx="4"/>')
+    svg.append(f'<text x="{w/2 - 370}" y="{ly + 20}" font-family="{FONT_STACK}" font-size="30" font-weight="600" fill="{TEXT_SUBTITLE}">Spatial Block CV (Unbiased Benchmark)</text>')
+    svg.append(f'<rect x="{w/2 + 160}" y="{ly}" width="36" height="26" fill="#ea580c" rx="4"/>')
+    svg.append(f'<text x="{w/2 + 210}" y="{ly + 20}" font-family="{FONT_STACK}" font-size="30" font-weight="600" fill="{TEXT_SUBTITLE}">Random CV (Optimistically Leaked)</text>')
 
     svg.append('</svg>')
     with open(out_path_svg, 'w', encoding='utf-8') as f:
@@ -252,7 +271,9 @@ generate_fig2_optimism_gap = generate_fig3_optimism_gap
 
 
 def generate_fig4_risk_map(geoms_wkt, probs, out_path_svg):
-    """Fig. 4: Vector road network risk map on clean white background."""
+    """Fig. 4: Vector road network risk map on clean white background.
+    Layout: Title and legend enlarged to 3x size on top left, road map on the right side.
+    """
     lines = [wkt.loads(g) for g in geoms_wkt]
     all_coords = [pt for l in lines for pt in l.coords]
     xs = [pt[0] for pt in all_coords]
@@ -260,55 +281,83 @@ def generate_fig4_risk_map(geoms_wkt, probs, out_path_svg):
 
     minx, maxx = min(xs), max(xs)
     miny, maxy = min(ys), max(ys)
+    dx = maxx - minx
+    dy = maxy - miny
 
-    w, h = 680, 880
-    ox, oy, pw, ph = 40, 75, 600, 765
-    scale = min(pw / (maxx - minx), ph / (maxy - miny))
+    w, h = 1600, 1150
+    oy, ph = 60, 1030
+    scale = ph / dy
+    map_w = dx * scale
+    # Position road map on the right side
+    map_ox = w - map_w - 50
 
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">']
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
-    
-    # Title & Subtitle
-    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Da Nang (Hai Chau): Out-of-Fold Road Flood Risk Map</text>')
-    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Random Forest Out-of-Fold Probability Under 5-Fold Spatial Block Validation</text>')
 
+    n_high, n_med, n_low = 0, 0, 0
+    # Group by risk category to draw in order: Low, Medium, High
+    low_lines, med_lines, high_lines = [], [], []
     for line, p in zip(lines, probs):
         if p >= 0.66:
-            col = '#dc2626' # High risk red
-            lw = 2.4
-            op = 0.95
+            high_lines.append(line)
+            n_high += 1
         elif p >= 0.33:
-            col = '#f59e0b' # Medium risk amber
-            lw = 1.5
-            op = 0.85
+            med_lines.append(line)
+            n_med += 1
         else:
-            col = '#2563eb' # Low risk royal blue
-            lw = 1.0
-            op = 0.75
+            low_lines.append(line)
+            n_low += 1
 
-        pts = []
-        for x, y in line.coords:
-            sx = ox + (x - minx) * scale
-            sy = oy + ph - (y - miny) * scale
-            pts.append(f"{sx:.1f},{sy:.1f}")
-        svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="{lw}" stroke-linecap="round" opacity="{op}"/>')
+    # Draw Low Risk (Blue)
+    for line in low_lines:
+        pts = [f"{map_ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in line.coords]
+        svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#2563eb" stroke-width="3.2" opacity="0.8"/>')
 
-    # Legend (Clean white card)
-    svg.append(f'<rect x="{ox + 15}" y="{oy + 15}" width="220" height="90" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4" opacity="0.96"/>')
-    legend_tiers = [
-        ('Low Risk (p &lt; 0.33)', '#2563eb', '1.6'),
-        ('Medium Risk (0.33 ≤ p &lt; 0.66)', '#f59e0b', '2.2'),
-        ('High Risk (p ≥ 0.66)', '#dc2626', '3.0')
-    ]
-    for idx, (label, col, lw_leg) in enumerate(legend_tiers):
-        ly = oy + 36 + idx * 22
-        svg.append(f'<line x1="{ox + 28}" y1="{ly}" x2="{ox + 55}" y2="{ly}" stroke="{col}" stroke-width="{lw_leg}"/>')
-        svg.append(f'<text x="{ox + 65}" y="{ly + 4}" font-family="{FONT_STACK}" font-size="10.5" fill="{TEXT_SUBTITLE}">{label}</text>')
+    # Draw Medium Risk (Amber)
+    for line in med_lines:
+        pts = [f"{map_ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in line.coords]
+        svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#f59e0b" stroke-width="5.0" opacity="0.9"/>')
 
-    # North Arrow
-    nx, ny = ox + pw - 30, oy + 35
-    svg.append(f'<polygon points="{nx},{ny} {nx-5},{ny+14} {nx+5},{ny+14}" fill="{TEXT_TITLE}"/>')
-    svg.append(f'<text x="{nx}" y="{ny-4}" text-anchor="middle" font-family="{FONT_STACK}" font-size="10" font-weight="bold" fill="{TEXT_TITLE}">N</text>')
+    # Draw High Risk (Red)
+    for line in high_lines:
+        pts = [f"{map_ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in line.coords]
+        svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="#dc2626" stroke-width="7.0" stroke-linecap="round" opacity="0.95"/>')
+
+    # Legend Card (3x enlarged on TOP LEFT, completely separate from road network)
+    cx, cy, cw, ch = 70, 70, 750, 430
+    svg.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="3" rx="20" opacity="0.98"/>')
+    svg.append(f'<text x="{cx + 40}" y="{cy + 65}" font-family="{FONT_STACK}" font-size="39" font-weight="bold" fill="{TEXT_TITLE}">Predicted Flood Risk</text>')
+    svg.append(f'<text x="{cx + 40}" y="{cy + 104}" font-family="{FONT_STACK}" font-size="24" fill="{TEXT_MUTED}">Random Forest Out-of-Fold</text>')
+    
+    # Low Risk
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 168}" x2="{cx + 155}" y2="{cy + 168}" stroke="#2563eb" stroke-width="12"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 161}" font-family="{FONT_STACK}" font-size="35" font-weight="bold" fill="#2563eb">Low Risk (p &lt; 0.33)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 203}" font-family="{FONT_STACK}" font-size="28" fill="{TEXT_MUTED}">{n_low} segments ({(n_low/len(lines))*100:.1f}%)</text>')
+
+    # Medium Risk
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 263}" x2="{cx + 155}" y2="{cy + 263}" stroke="#f59e0b" stroke-width="13"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 256}" font-family="{FONT_STACK}" font-size="35" font-weight="bold" fill="#d97706">Medium Risk (0.33 ≤ p &lt; 0.66)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 298}" font-family="{FONT_STACK}" font-size="28" fill="{TEXT_MUTED}">{n_med} segments ({(n_med/len(lines))*100:.1f}%)</text>')
+
+    # High Risk
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 358}" x2="{cx + 155}" y2="{cy + 358}" stroke="#dc2626" stroke-width="14"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 351}" font-family="{FONT_STACK}" font-size="35" font-weight="bold" fill="#dc2626">High Risk (p ≥ 0.66)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 393}" font-family="{FONT_STACK}" font-size="28" font-weight="bold" fill="#b91c1c">{n_high} segments ({(n_high/len(lines))*100:.1f}%)</text>')
+
+    # North Indicator on Left
+    nx, ny = 430, 620
+    svg.append(f'<polygon points="{nx},{ny-38} {nx-20},{ny+15} {nx+20},{ny+15}" fill="{TEXT_TITLE}"/>')
+    svg.append(f'<text x="{nx}" y="{ny-50}" text-anchor="middle" font-family="{FONT_STACK}" font-size="39" font-weight="bold" fill="{TEXT_TITLE}">N</text>')
+
+    # Scale Bar (500 m) on Left
+    sb_w = 500 * scale
+    sb_x1 = 430 - sb_w / 2
+    sb_x2 = 430 + sb_w / 2
+    sb_y = 780
+    svg.append(f'<line x1="{sb_x1:.1f}" y1="{sb_y}" x2="{sb_x2:.1f}" y2="{sb_y}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<line x1="{sb_x1:.1f}" y1="{sb_y-12}" x2="{sb_x1:.1f}" y2="{sb_y+12}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<line x1="{sb_x2:.1f}" y1="{sb_y-12}" x2="{sb_x2:.1f}" y2="{sb_y+12}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<text x="430" y="{sb_y+44}" text-anchor="middle" font-family="{FONT_STACK}" font-size="33" font-weight="bold" fill="{TEXT_SUBTITLE}">500 m</text>')
 
     svg.append('</svg>')
     with open(out_path_svg, 'w', encoding='utf-8') as f:
@@ -477,12 +526,15 @@ generate_fig4_routing = generate_fig7_routing
 
 
 def generate_fig8_lambda_tradeoff(lambda_curves_data, out_path_svg):
-    """Fig. 8: Downstream routing trade-off curves with strict axis clipping and dynamic range."""
-    w, h = 880, 490
+    """Fig. 8: Downstream routing trade-off curves (Figure 3 in paper).
+    Enlarged to 1600x1050 to match the text size and layout proportions of Figs 1, 2, and 4 in print.
+    """
+    w, h = 1600, 1050
+    ox, oy, pw, ph = 180, 60, 940, 780
+    
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">']
     
     # Clip path definition to prevent ANY leakage outside axis box
-    ox, oy, pw, ph = 80, 65, 540, 360
     svg.append(f'''<defs>
   <clipPath id="fig8-plot-clip">
     <rect x="{ox}" y="{oy}" width="{pw}" height="{ph}"/>
@@ -490,45 +542,44 @@ def generate_fig8_lambda_tradeoff(lambda_curves_data, out_path_svg):
 </defs>''')
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
 
-    svg.append(f'<text x="{w/2}" y="28" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Trade-off Curves: Flood Exposure vs Travel-Time Increase Across Risk Aversion λ = 1 to 20</text>')
-    svg.append(f'<text x="{w/2}" y="46" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Parametric sweep: λ controls penalty severity C_i = t_i (1 + λ p_i)</text>')
-
     # Dynamically determine bounds to prevent out-of-bound coordinates
     all_times = [pt['time_pct'] for pts in lambda_curves_data.values() for pt in pts]
     all_floods = [pt['flood_dist'] for pts in lambda_curves_data.values() for pt in pts]
     
-    max_t = max(35.0, math.ceil(max(all_times) * 1.15 / 5.0) * 5.0) if all_times else 40.0
-    min_fl = max(0.0, math.floor(min(all_floods) * 0.85 / 100.0) * 100.0) if all_floods else 300.0
+    max_t = max(35.0, math.ceil(max(all_times) * 1.15 / 5.0) * 5.0) if all_times else 55.0
+    min_fl = max(0.0, math.floor(min(all_floods) * 0.85 / 100.0) * 100.0) if all_floods else 200.0
     max_fl = math.ceil(max(all_floods) * 1.10 / 100.0) * 100.0 if all_floods else 1200.0
 
-    # X-axis ticks (Travel time %)
+    # Grid lines & ticks (Travel time %)
     t_ticks = np.linspace(0, max_t, int(max_t / 5) + 1)
     for t_tick in t_ticks:
         tx = ox + (t_tick / max_t) * pw
-        svg.append(f'<line x1="{tx}" y1="{oy}" x2="{tx}" y2="{oy + ph}" stroke="{GRID_LINE}" stroke-width="1"/>')
-        svg.append(f'<text x="{tx}" y="{oy + ph + 18}" text-anchor="middle" font-family="{FONT_STACK}" font-size="10" fill="{TEXT_MUTED}">{int(t_tick)}%</text>')
+        svg.append(f'<line x1="{tx:.1f}" y1="{oy}" x2="{tx:.1f}" y2="{oy + ph}" stroke="{GRID_LINE}" stroke-width="1.8"/>')
+        svg.append(f'<text x="{tx:.1f}" y="{oy + ph + 42}" text-anchor="middle" font-family="{FONT_STACK}" font-size="30" font-weight="600" fill="{TEXT_MUTED}">{int(t_tick)}%</text>')
 
-    # Y-axis ticks (Flooded distance m)
+    # Grid lines & ticks (Flooded distance m)
     fl_ticks = np.linspace(min_fl, max_fl, 6)
     for fl_tick in fl_ticks:
         ty = oy + ph - ((fl_tick - min_fl) / (max_fl - min_fl)) * ph
-        svg.append(f'<line x1="{ox}" y1="{ty}" x2="{ox + pw}" y2="{ty}" stroke="{GRID_LINE}" stroke-width="1"/>')
-        svg.append(f'<text x="{ox - 8}" y="{ty + 4}" text-anchor="end" font-family="{FONT_STACK}" font-size="10" fill="{TEXT_MUTED}">{int(fl_tick)}m</text>')
+        svg.append(f'<line x1="{ox}" y1="{ty:.1f}" x2="{ox + pw}" y2="{ty:.1f}" stroke="{GRID_LINE}" stroke-width="1.8"/>')
+        svg.append(f'<text x="{ox - 20}" y="{ty + 10:.1f}" text-anchor="end" font-family="{FONT_STACK}" font-size="30" font-weight="600" fill="{TEXT_MUTED}">{int(fl_tick)}m</text>')
 
-    # Bounding box
-    svg.append(f'<rect x="{ox}" y="{oy}" width="{pw}" height="{ph}" fill="none" stroke="{BORDER_AXIS}" stroke-width="1.2"/>')
-    svg.append(f'<text x="{ox + pw/2}" y="{oy + ph + 38}" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" font-weight="600" fill="{TEXT_SUBTITLE}">Median Travel Time Overhead (%)</text>')
-    svg.append(f'<text x="{ox - 50}" y="{oy + ph/2}" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" font-weight="600" fill="{TEXT_SUBTITLE}" transform="rotate(-90 {ox-50} {oy+ph/2})">Flooded Distance per Trip (m)</text>')
+    # Bounding box & Axis labels
+    svg.append(f'<rect x="{ox}" y="{oy}" width="{pw}" height="{ph}" fill="none" stroke="{BORDER_AXIS}" stroke-width="2.6"/>')
+    svg.append(f'<text x="{ox + pw/2:.1f}" y="{oy + ph + 105}" text-anchor="middle" font-family="{FONT_STACK}" font-size="36" font-weight="bold" fill="{TEXT_SUBTITLE}">Median Travel Time Overhead (%)</text>')
+    svg.append(f'<text x="{ox - 105}" y="{oy + ph/2:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="36" font-weight="bold" fill="{TEXT_SUBTITLE}" transform="rotate(-90 {ox-105} {oy+ph/2:.1f})">Flooded Distance per Trip (m)</text>')
 
-    # Side Legend Box (x: 650..855) outside the plot bounds
-    leg_x = 650
-    svg.append(f'<rect x="{leg_x}" y="{oy}" width="205" height="{ph}" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4"/>')
-    svg.append(f'<text x="{leg_x + 15}" y="{oy + 24}" font-family="{FONT_STACK}" font-size="11" font-weight="bold" fill="{TEXT_TITLE}">Models &amp; Baselines</text>')
-    svg.append(f'<text x="{leg_x + 15}" y="{oy + 40}" font-family="{FONT_STACK}" font-size="9.5" fill="{TEXT_MUTED}">Curves over λ = 1 to 20</text>')
+    # Side Legend Box (card layout on right side, matching Figs 1, 2, and 4)
+    leg_x = 1160
+    leg_w = 420
+    leg_h = ph
+    svg.append(f'<rect x="{leg_x}" y="{oy}" width="{leg_w}" height="{leg_h}" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="2.6" rx="16"/>')
+    svg.append(f'<text x="{leg_x + 35}" y="{oy + 65}" font-family="{FONT_STACK}" font-size="38" font-weight="bold" fill="{TEXT_TITLE}">Models &amp; Baselines</text>')
+    svg.append(f'<text x="{leg_x + 35}" y="{oy + 108}" font-family="{FONT_STACK}" font-size="26" fill="{TEXT_MUTED}">Curves over λ = 1 to 20</text>')
+    svg.append(f'<line x1="{leg_x + 35}" y1="{oy + 138}" x2="{leg_x + leg_w - 35}" y2="{oy + 138}" stroke="#e2e8f0" stroke-width="2"/>')
 
     # Render curves with STRICT CLIPPING
     svg.append('<g clip-path="url(#fig8-plot-clip)">')
-    leg_idx = 0
     for s_name, points in lambda_curves_data.items():
         col = COLOR_MAP.get(s_name, '#333333')
         pts_svg = []
@@ -537,20 +588,23 @@ def generate_fig8_lambda_tradeoff(lambda_curves_data, out_path_svg):
             cx = ox + (t_pct / max_t) * pw
             cy = oy + ph - ((f_dist - min_fl) / (max_fl - min_fl)) * ph
             pts_svg.append((cx, cy))
-            svg.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="4.5" fill="{col}"/>')
+            svg.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="9.5" fill="{col}"/>')
 
         if len(pts_svg) > 1:
             line_str = " ".join([f"{x:.1f},{y:.1f}" for x, y in pts_svg])
-            svg.append(f'<polyline points="{line_str}" fill="none" stroke="{col}" stroke-width="2.3" stroke-linecap="round"/>')
+            svg.append(f'<polyline points="{line_str}" fill="none" stroke="{col}" stroke-width="6.5" stroke-linecap="round"/>')
     svg.append('</g>')
 
     # Render Legend entries outside clipping
+    leg_idx = 0
+    item_y0 = oy + 195
+    item_step = 68
     for s_name in lambda_curves_data.keys():
         col = COLOR_MAP.get(s_name, '#333333')
-        ly = oy + 66 + leg_idx * 34
-        svg.append(f'<line x1="{leg_x + 15}" y1="{ly}" x2="{leg_x + 40}" y2="{ly}" stroke="{col}" stroke-width="3"/>')
-        svg.append(f'<circle cx="{leg_x + 27.5}" cy="{ly}" r="3.5" fill="{col}"/>')
-        svg.append(f'<text x="{leg_x + 48}" y="{ly + 4}" font-family="{FONT_STACK}" font-size="10.5" font-weight="600" fill="{TEXT_SUBTITLE}">{s_name}</text>')
+        ly = item_y0 + leg_idx * item_step
+        svg.append(f'<line x1="{leg_x + 35}" y1="{ly}" x2="{leg_x + 95}" y2="{ly}" stroke="{col}" stroke-width="7.5"/>')
+        svg.append(f'<circle cx="{leg_x + 65}" cy="{ly}" r="8.5" fill="{col}"/>')
+        svg.append(f'<text x="{leg_x + 115}" y="{ly + 11}" font-family="{FONT_STACK}" font-size="32" font-weight="bold" fill="{TEXT_SUBTITLE}">{s_name}</text>')
         leg_idx += 1
 
     svg.append('</svg>')
@@ -560,7 +614,9 @@ def generate_fig8_lambda_tradeoff(lambda_curves_data, out_path_svg):
 
 
 def generate_fig9_representative_route(geoms_wkt, flood_labels, routes_dict, out_path_svg):
-    """Fig. 9: Representative OD pair comparison map on white background."""
+    """Fig. 9: Representative OD pair comparison map on white background.
+    Layout: Title and legend enlarged to 3x size on top left, road map on the right side.
+    """
     lines = [wkt.loads(g) for g in geoms_wkt]
     all_coords = [pt for l in lines for pt in l.coords]
     xs = [pt[0] for pt in all_coords]
@@ -568,24 +624,26 @@ def generate_fig9_representative_route(geoms_wkt, flood_labels, routes_dict, out
 
     minx, maxx = min(xs), max(xs)
     miny, maxy = min(ys), max(ys)
+    dx = maxx - minx
+    dy = maxy - miny
 
-    w, h = 760, 880
-    ox, oy, pw, ph = 40, 75, 680, 765
-    scale = min(pw / (maxx - minx), ph / (maxy - miny))
+    w, h = 1680, 1200
+    oy, ph = 60, 1080
+    scale = ph / dy
+    map_w = dx * scale
+    # Position road map on the right side
+    map_ox = w - map_w - 50
 
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">']
     svg.append(f'<rect width="100%" height="100%" fill="{BG_WHITE}"/>')
-    
-    # Title & Subtitle
-    svg.append(f'<text x="{w/2}" y="32" text-anchor="middle" font-family="{FONT_STACK}" font-size="14" font-weight="bold" fill="{TEXT_TITLE}">Representative Origin-Destination Navigation: Shortest Path vs XGBoost vs Oracle</text>')
-    svg.append(f'<text x="{w/2}" y="50" text-anchor="middle" font-family="{FONT_STACK}" font-size="11" fill="{TEXT_MUTED}">Shortest path crosses 14 flooded segments (951 m); XGBoost flood-aware route crosses 6 (344 m)</text>')
 
     # 1. Base network on white background
     for line, fl in zip(lines, flood_labels):
-        col = '#fecaca' if fl == 1 else '#cbd5e1'
-        lw = 1.6 if fl == 1 else 0.9
-        pts = [f"{ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in line.coords]
-        svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="{lw}" opacity="0.8"/>')
+        col = '#fca5a5' if fl == 1 else '#cbd5e1'
+        lw = 5.5 if fl == 1 else 3.2
+        op = 0.85 if fl == 1 else 0.70
+        pts = [f"{map_ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in line.coords]
+        svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="{lw}" opacity="{op}"/>')
 
     # 2. Specific routes
     route_colors = {
@@ -601,37 +659,70 @@ def generate_fig9_representative_route(geoms_wkt, flood_labels, routes_dict, out
     for r_label, seg_lines in routes_dict.items():
         col = route_colors.get(r_label, '#2563eb')
         for idx_s, s_geom in enumerate(seg_lines):
-            pts = [f"{ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in s_geom.coords]
-            svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="3.5" stroke-linecap="round" opacity="0.95"/>')
+            pts = [f"{map_ox + (x - minx) * scale:.1f},{oy + ph - (y - miny) * scale:.1f}" for x, y in s_geom.coords]
+            svg.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="10.5" stroke-linecap="round" opacity="0.95"/>')
             if start_pt is None and idx_s == 0:
-                start_pt = (ox + (s_geom.coords[0][0] - minx) * scale, oy + ph - (s_geom.coords[0][1] - miny) * scale)
-            end_pt = (ox + (s_geom.coords[-1][0] - minx) * scale, oy + ph - (s_geom.coords[-1][1] - miny) * scale)
+                start_pt = (map_ox + (s_geom.coords[0][0] - minx) * scale, oy + ph - (s_geom.coords[0][1] - miny) * scale)
+            end_pt = (map_ox + (s_geom.coords[-1][0] - minx) * scale, oy + ph - (s_geom.coords[-1][1] - miny) * scale)
 
-    # Origin & Destination markers
+    # Origin & Destination markers on road map
     if start_pt:
-        svg.append(f'<circle cx="{start_pt[0]:.1f}" cy="{start_pt[1]:.1f}" r="8" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>')
-        svg.append(f'<text x="{start_pt[0]:.1f}" y="{start_pt[1] + 3:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="9" font-weight="bold" fill="#ffffff">S</text>')
+        svg.append(f'<circle cx="{start_pt[0]:.1f}" cy="{start_pt[1]:.1f}" r="18" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>')
+        svg.append(f'<text x="{start_pt[0]:.1f}" y="{start_pt[1] + 7:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="20" font-weight="bold" fill="#ffffff">S</text>')
     if end_pt:
-        svg.append(f'<circle cx="{end_pt[0]:.1f}" cy="{end_pt[1]:.1f}" r="8" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>')
-        svg.append(f'<text x="{end_pt[0]:.1f}" y="{end_pt[1] + 3:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="9" font-weight="bold" fill="#ffffff">D</text>')
+        svg.append(f'<circle cx="{end_pt[0]:.1f}" cy="{end_pt[1]:.1f}" r="18" fill="#dc2626" stroke="#ffffff" stroke-width="4"/>')
+        svg.append(f'<text x="{end_pt[0]:.1f}" y="{end_pt[1] + 7:.1f}" text-anchor="middle" font-family="{FONT_STACK}" font-size="20" font-weight="bold" fill="#ffffff">D</text>')
 
-    # Legend (Clean white card)
-    svg.append(f'<rect x="{ox + 15}" y="{oy + 15}" width="310" height="110" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="1.2" rx="4" opacity="0.96"/>')
-    leg_items = [
-        ('Shortest Path (High Exposure: 951 m inundated)', '#dc2626', '3.2'),
-        ('XGBoost Flood-Aware Route (344 m flooded)', '#2563eb', '3.2'),
-        ('Oracle Route (Simulated Labels: 0 m flooded)', '#16a34a', '3.2'),
-        ('Background Flooded Segments (>30 cm)', '#fecaca', '2.0')
-    ]
-    for idx, (label, col, lw_leg) in enumerate(leg_items):
-        ly = oy + 34 + idx * 22
-        svg.append(f'<line x1="{ox + 28}" y1="{ly}" x2="{ox + 55}" y2="{ly}" stroke="{col}" stroke-width="{lw_leg}"/>')
-        svg.append(f'<text x="{ox + 65}" y="{ly + 4}" font-family="{FONT_STACK}" font-size="10" fill="{TEXT_SUBTITLE}">{label}</text>')
+    # Legend Card (3x enlarged on TOP LEFT, completely separate from road network)
+    cx, cy, cw, ch = 70, 70, 740, 500
+    svg.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" fill="{BG_WHITE}" stroke="#cbd5e1" stroke-width="3" rx="20" opacity="0.98"/>')
+    svg.append(f'<text x="{cx + 40}" y="{cy + 60}" font-family="{FONT_STACK}" font-size="38" font-weight="bold" fill="{TEXT_TITLE}">Navigation Strategies (OD Trip)</text>')
+    svg.append(f'<text x="{cx + 40}" y="{cy + 96}" font-family="{FONT_STACK}" font-size="23" fill="{TEXT_MUTED}">Comparison across representative flooded corridor</text>')
+    
+    # Shortest Path
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 155}" x2="{cx + 155}" y2="{cy + 155}" stroke="#dc2626" stroke-width="13"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 148}" font-family="{FONT_STACK}" font-size="33" font-weight="bold" fill="#dc2626">Shortest Path (High Exposure)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 187}" font-family="{FONT_STACK}" font-size="27" fill="{TEXT_MUTED}">14 flooded seg. (951 m | 3.08 min)</text>')
 
-    # North Arrow
-    nx, ny = ox + pw - 30, oy + 35
-    svg.append(f'<polygon points="{nx},{ny} {nx-5},{ny+14} {nx+5},{ny+14}" fill="{TEXT_TITLE}"/>')
-    svg.append(f'<text x="{nx}" y="{ny-4}" text-anchor="middle" font-family="{FONT_STACK}" font-size="10" font-weight="bold" fill="{TEXT_TITLE}">N</text>')
+    # XGBoost Flood-Aware
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 243}" x2="{cx + 155}" y2="{cy + 243}" stroke="#2563eb" stroke-width="13"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 236}" font-family="{FONT_STACK}" font-size="33" font-weight="bold" fill="#2563eb">XGBoost (Flood-Aware Route)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 275}" font-family="{FONT_STACK}" font-size="27" fill="{TEXT_MUTED}">6 flooded seg. (344 m | 4.32 min)</text>')
+
+    # Oracle Ground Truth
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 331}" x2="{cx + 155}" y2="{cy + 331}" stroke="#16a34a" stroke-width="13"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 324}" font-family="{FONT_STACK}" font-size="33" font-weight="bold" fill="#16a34a">Oracle (simulated labels)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 363}" font-family="{FONT_STACK}" font-size="27" fill="{TEXT_MUTED}">0 flooded seg. (0 m | 5.08 min)</text>')
+
+    # Background Flooded
+    svg.append(f'<line x1="{cx + 40}" y1="{cy + 419}" x2="{cx + 155}" y2="{cy + 419}" stroke="#fca5a5" stroke-width="11"/>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 412}" font-family="{FONT_STACK}" font-size="32" font-weight="bold" fill="#64748b">Flooded Segments (&gt;30 cm)</text>')
+    svg.append(f'<text x="{cx + 180}" y="{cy + 450}" font-family="{FONT_STACK}" font-size="25" fill="{TEXT_MUTED}">Background simulated impassable roads</text>')
+
+    # Trip Origin & Destination Badges (Side-by-side below card)
+    badge_y = cy + ch + 30
+    svg.append(f'<circle cx="{cx + 50}" cy="{badge_y + 22}" r="18" fill="#16a34a" stroke="#ffffff" stroke-width="3"/>')
+    svg.append(f'<text x="{cx + 50}" y="{badge_y + 29}" text-anchor="middle" font-family="{FONT_STACK}" font-size="20" font-weight="bold" fill="#ffffff">S</text>')
+    svg.append(f'<text x="{cx + 85}" y="{badge_y + 31}" font-family="{FONT_STACK}" font-size="28" font-weight="bold" fill="#16a34a">Origin (Trip Start)</text>')
+
+    svg.append(f'<circle cx="{cx + 420}" cy="{badge_y + 22}" r="18" fill="#dc2626" stroke="#ffffff" stroke-width="3"/>')
+    svg.append(f'<text x="{cx + 420}" y="{badge_y + 29}" text-anchor="middle" font-family="{FONT_STACK}" font-size="20" font-weight="bold" fill="#ffffff">D</text>')
+    svg.append(f'<text x="{cx + 455}" y="{badge_y + 31}" font-family="{FONT_STACK}" font-size="28" font-weight="bold" fill="#dc2626">Destination (Trip End)</text>')
+
+    # North Indicator on Top-Left
+    nx, ny = 440, 720
+    svg.append(f'<polygon points="{nx},{ny-38} {nx-20},{ny+15} {nx+20},{ny+15}" fill="{TEXT_TITLE}"/>')
+    svg.append(f'<text x="{nx}" y="{ny-50}" text-anchor="middle" font-family="{FONT_STACK}" font-size="39" font-weight="bold" fill="{TEXT_TITLE}">N</text>')
+
+    # Scale Bar (500 m) on Left
+    sb_w = 500 * scale
+    sb_x1 = 440 - sb_w / 2
+    sb_x2 = 440 + sb_w / 2
+    sb_y = 880
+    svg.append(f'<line x1="{sb_x1:.1f}" y1="{sb_y}" x2="{sb_x2:.1f}" y2="{sb_y}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<line x1="{sb_x1:.1f}" y1="{sb_y-12}" x2="{sb_x1:.1f}" y2="{sb_y+12}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<line x1="{sb_x2:.1f}" y1="{sb_y-12}" x2="{sb_x2:.1f}" y2="{sb_y+12}" stroke="{TEXT_SUBTITLE}" stroke-width="5.5"/>')
+    svg.append(f'<text x="440" y="{sb_y+44}" text-anchor="middle" font-family="{FONT_STACK}" font-size="33" font-weight="bold" fill="{TEXT_SUBTITLE}">500 m</text>')
 
     svg.append('</svg>')
     with open(out_path_svg, 'w', encoding='utf-8') as f:

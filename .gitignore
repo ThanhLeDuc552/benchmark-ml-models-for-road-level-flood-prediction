@@ -38,6 +38,7 @@ figures/paper_values.json
 # Working notes and draft prompt files
 missing data.txt
 missing_data_for_report.txt
+minor fixes.txt
 benchmark_tables.tex
 
 # Paper manuscript files (kept locally, excluded from anonymous code & data reproduction release)
