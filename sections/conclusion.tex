@@ -1,7 +1,0 @@
-% !TeX root = ../main.tex
-\section{Conclusion}
-\label{sec:conclusion}
-
-This paper benchmarked six machine learning models from five families for road-level flood prediction and flood-aware routing during the 2022 Da Nang flood, using labels from a hydraulic simulation. Under spatial cross-validation, the five nonlinear models performed similarly (AUC-PR 0.796--0.840, highest for random forest), and random cross-validation overstated AUC-ROC by up to 0.094. As routing costs, the MLP's probabilities reduced flooded distance by 41.2\% for a 16.5\% increase in travel time, so the best classifier was not the best router at a fixed risk weight, and even an oracle could not avoid flooding on 94.7\% of trips. Terrain, led by depression depth, drove the predictions of every model.
-
-Future work will validate the labels against observed flood reports, add further events, tune hyperparameters over several seeds, and add risk costs to reinforcement-learning routing~\cite{le2026}. The risk maps could also provide prior flood probabilities for placing road sensors or cameras in Da Nang, following~\cite{pan2026}.

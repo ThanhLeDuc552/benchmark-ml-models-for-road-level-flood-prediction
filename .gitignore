@@ -28,12 +28,23 @@ Thumbs.db
 resources for forming dataset/
 new DSSs/
 
-# Reports and evaluation summaries
+# Reports and internal evaluation summaries
 figures/*errors*.txt
 figures/current figures errors.txt
 figures/evaluation.md
 figures/paper_results_summary.md
 figures/paper_values.json
+
+# Working notes and draft prompt files
+missing data.txt
+missing_data_for_report.txt
+benchmark_tables.tex
+
+# Paper manuscript files (kept locally, excluded from anonymous code & data reproduction release)
+conference_101719.*
+IEEE_Conference_Template.pdf
+references.bib
+sections/
 
 # LaTeX auxiliary files
 *.aux
